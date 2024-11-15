@@ -48,37 +48,6 @@ def load_checkpoint(model, checkpoint_path):
 
 ### Data Generation ###
 
-class DotDataset(Dataset):
-    def __init__(self, image_dir='./display_dpi32', transform=None):
-        self.image_dir = image_dir
-        self.image_size = image_size
-        self.transform = transform
-        self.data = []
-        self.labels = []
-        
-        # Get list of image files from the directory
-        image_files = [f for f in os.listdir(image_dir) if f.startswith('image_')]
-        
-        for img_file in image_files:
-            # Parse filename to get dots information
-            # image_numBlackDots_numTotalDots_index.png
-            parts = img_file.split('_')
-            num_black = int(parts[1])
-            num_total = int(parts[2])
-            
-            # Calculate probability
-            prob = num_black / num_total
-            
-            # Load and process image
-            img_path = os.path.join(image_dir, img_file)
-            image = Image.open(img_path).convert('L')  # Convert to grayscale
-            image = np.array(image) / 255.0  # Normalize to [0,1]
-            image = image.astype(np.float32).flatten()
-            
-            self.data.append(image)
-            self.labels.append(prob)
-            
-        self.num_samples = len(self.data)
 
     def __len__(self):
         return self.num_samples
@@ -123,7 +92,7 @@ wandb.init(
 
 ### Dataset and DataLoader ###
 
-dataset = DotDataset(image_dir='display', image_size=28)
+dataset = DotsDataset(image_dir='./training_data/display_dpi32')
 train_loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
 ### Initialize Model, Loss Function, and Optimizer ###
