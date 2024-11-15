@@ -9,6 +9,7 @@ import os
 from PIL import Image
 import wandb
 from pathlib import Path
+from tqdm import tqdm
 
 # Set random seed for reproducibility
 torch.manual_seed(0)
@@ -18,16 +19,6 @@ np.random.seed(0)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {device}")
 
-# Initialize wandb
-wandb.init(
-    project="mlp-dots",
-    config={
-        "learning_rate": learning_rate,
-        "epochs": num_epochs,
-        "batch_size": batch_size,
-        "input_size": input_size,
-    }
-)
 
 # Create checkpoint directory
 ckpt_dir = Path("checkpoints")
@@ -119,6 +110,17 @@ num_epochs = 20
 batch_size = 64
 learning_rate = 0.001
 
+# Initialize wandb
+wandb.init(
+    project="mlp-dots",
+    config={
+        "learning_rate": learning_rate,
+        "epochs": num_epochs,
+        "batch_size": batch_size,
+        "input_size": input_size,
+    }
+)
+
 ### Dataset and DataLoader ###
 
 dataset = DotDataset(image_dir='display', image_size=28)
@@ -133,9 +135,11 @@ optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 ### Training Loop ###
 best_loss = float('inf')
 
-for epoch in range(num_epochs):
+# Add progress bar for epochs
+for epoch in tqdm(range(num_epochs), desc='Epochs'):
     epoch_loss = 0.0
-    for images, labels in train_loader:
+    # Add progress bar for batches
+    for images, labels in tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs}', leave=False):
         # Move tensors to GPU
         images = images.to(device)
         labels = labels.to(device)
@@ -158,8 +162,6 @@ for epoch in range(num_epochs):
         "epoch": epoch + 1,
         "loss": avg_loss,
     })
-    
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {avg_loss:.4f}')
     
     # Save checkpoint every 5 epochs and on the final epoch
     if (epoch + 1) % 5 == 0 or epoch == num_epochs - 1:
