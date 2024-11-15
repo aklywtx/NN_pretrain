@@ -1,3 +1,16 @@
 _T=20241115_17:30:08_67805	 git status
 _T=20241115_18:19:52_79989	 git init
 _T=20241115_18:21:15_79989	 git init
+_T=20241115_18:21:33_79989	 git add -A
+_T=20241115_18:21:48_79989	 git commit -m "first commit"
+_T=20241115_18:21:55_79989	 git branch -M main
+_T=20241115_18:22:09_79989	 git remote add origin git@github.com:aklywtx/NN_pretrain.git
+_T=20241115_18:23:09_79989	 git push -u origin main
+_T=20241115_18:25:32_79989	 touch .gitignore
+_T=20241115_18:25:40_79989	 vim .gitignore
+_T=20241115_18:25:46_79989	 git status
+_T=20241115_18:26:03_79989	 git add -A
+_T=20241115_18:26:05_79989	 git status
+_T=20241115_18:26:54_79989	 git rm --cache .history-aklywtx
+_T=20241115_18:27:06_79989	 git rm --cache training_data/.DS_Store
+_T=20241115_18:27:09_79989	 git status
