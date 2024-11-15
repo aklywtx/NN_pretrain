@@ -11,40 +11,35 @@ import wandb
 from pathlib import Path
 from tqdm import tqdm
 
-# Set random seed for reproducibility
 torch.manual_seed(0)
 np.random.seed(0)
-
-# Set device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {device}")
 
 
-# Create checkpoint directory
-ckpt_dir = Path("checkpoints")
-ckpt_dir.mkdir(exist_ok=True)
-
-def save_checkpoint(model, epoch, loss):
-    ckpt_path = ckpt_dir / f"model_epoch_{epoch}.pt"
+### Checkpoint Management ###
+class CheckpointManager:
+    def __init__(self, directory="checkpoints"):
+        self.ckpt_dir = Path(directory)
+        self.ckpt_dir.mkdir(exist_ok=True)
     
-    # Save the new checkpoint
-    torch.save({
-        'epoch': epoch,
-        'model_state_dict': model.state_dict(),
-        'loss': loss,
-    }, ckpt_path)
+    def save_checkpoint(self, model, epoch, loss):
+        ckpt_path = self.ckpt_dir / f"model_epoch_{epoch}.pt"
+        torch.save({
+            'epoch': epoch,
+            'model_state_dict': model.state_dict(),
+            'loss': loss,
+        }, ckpt_path)
+        
+        # Keep only the latest checkpoint and the best checkpoint
+        checkpoints = sorted(self.ckpt_dir.glob("model_epoch_*.pt"))
+        if len(checkpoints) > 2:
+            checkpoints[0].unlink()
     
-    # Keep only the latest checkpoint and the best checkpoint
-    checkpoints = sorted(ckpt_dir.glob("model_epoch_*.pt"))
-    if len(checkpoints) > 2:
-        # Remove the oldest checkpoint
-        checkpoints[0].unlink()
-
-# To load a checkpoint later:
-def load_checkpoint(model, checkpoint_path):
-    checkpoint = torch.load(checkpoint_path)
-    model.load_state_dict(checkpoint['model_state_dict'])
-    return checkpoint['epoch'], checkpoint['loss']
+    def load_checkpoint(self, model, checkpoint_path):
+        checkpoint = torch.load(checkpoint_path)
+        model.load_state_dict(checkpoint['model_state_dict'])
+        return checkpoint['epoch'], checkpoint['loss']
 
 
 class DotDataset(Dataset):
@@ -102,69 +97,118 @@ class OneLayerMLP(nn.Module):
         out = self.fc(x)
         return out
 
-### Hyperparameters ###
-
-input_size = 256 * 256  # Flattened image size (256 * 256 pixels)
-num_epochs = 20
-batch_size = 64
-learning_rate = 0.001
-
-# Initialize wandb
-wandb.init(
-    project="mlp-dots",
-    config={
-        "learning_rate": learning_rate,
-        "epochs": num_epochs,
-        "batch_size": batch_size,
-        "input_size": input_size,
-    }
-)
-
-### Dataset and DataLoader ###
-
-dataset = DotDataset(image_dir='/local/xtong/NN_pretrain/training_data/displays_dpi32', image_size=input_size)
-train_loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
-
-### Initialize Model, Loss Function, and Optimizer ###
-
-model = OneLayerMLP(input_size).to(device)  # Move model to GPU
-criterion = nn.MSELoss()
-optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-
-### Training Loop ###
-best_loss = float('inf')
-
-# Add progress bar for epochs
-for epoch in tqdm(range(num_epochs), desc='Epochs'):
-    epoch_loss = 0.0
-    # Add progress bar for batches
-    for images, labels in tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs}', leave=False):
-        # Move tensors to GPU
-        images = images.to(device)
-        labels = labels.to(device)
+### Training and Testing Functions ###
+class MLPTrainer:
+    def __init__(self, model, criterion, optimizer, checkpoint_manager, device):
+        self.model = model
+        self.criterion = criterion
+        self.optimizer = optimizer
+        self.checkpoint_manager = checkpoint_manager
+        self.device = device
+    
+    def train(self, train_loader, num_epochs):
+        self.model.train()
+        best_loss = float('inf')
         
-        # Forward Pass
-        outputs = model(images)
-        loss = criterion(outputs, labels)
-
-        # Backward and Optimize
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-
-        epoch_loss += loss.item()
-
-    avg_loss = epoch_loss / len(train_loader)
+        for epoch in tqdm(range(num_epochs), desc='Epochs'):
+            epoch_loss = 0.0
+            for images, labels in tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs}', leave=False):
+                images, labels = images.to(self.device), labels.to(self.device)
+                
+                outputs = self.model(images)
+                loss = self.criterion(outputs, labels)
+                
+                self.optimizer.zero_grad()
+                loss.backward()
+                self.optimizer.step()
+                
+                epoch_loss += loss.item()
+            
+            avg_loss = epoch_loss / len(train_loader)
+            wandb.log({"epoch": epoch + 1, "loss": avg_loss})
+            
+            if (epoch + 1) % 5 == 0 or epoch == num_epochs - 1:
+                self.checkpoint_manager.save_checkpoint(self.model, epoch + 1, avg_loss)
     
-    # Log metrics to wandb
-    wandb.log({
-        "epoch": epoch + 1,
-        "loss": avg_loss,
-    })
+    def test(self, test_dir, batch_size):
+        self.model.eval()
+        test_dataset = DotDataset(image_dir=test_dir)
+        test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+        
+        total_loss = 0
+        predictions = []
+        actual_values = []
+        
+        with torch.no_grad():
+            for images, labels in tqdm(test_loader, desc='Testing'):
+                outputs = self.model(images)
+                loss = self.criterion(outputs, labels)
+                
+                total_loss += loss.item()
+                predictions.extend(outputs.cpu().numpy())
+                actual_values.extend(labels.cpu().numpy())
+        
+        self._analyze_results(total_loss / len(test_loader), predictions, actual_values)
     
-    # Save checkpoint every 5 epochs and on the final epoch
-    if (epoch + 1) % 5 == 0 or epoch == num_epochs - 1:
-        save_checkpoint(model, epoch + 1, avg_loss)
+    def _analyze_results(self, avg_loss, predictions, actual_values):
+        predictions = np.array(predictions)
+        actual_values = np.array(actual_values)
+        
+        mse = np.mean((predictions - actual_values) ** 2)
+        mae = np.mean(np.abs(predictions - actual_values))
+        
+        print(f"\nTest Results:")
+        print(f"Average Loss: {avg_loss:.4f}")
+        print(f"MSE: {mse:.4f}")
+        print(f"MAE: {mae:.4f}")
+        
+        plt.figure(figsize=(10, 6))
+        plt.scatter(actual_values, predictions, alpha=0.5)
+        plt.plot([0, 1], [0, 1], 'r--')
+        plt.xlabel('Actual Values')
+        plt.ylabel('Predictions')
+        plt.title('Predictions vs Actual Values')
+        plt.savefig('test_results.png')
+        plt.close()
 
-# Finish wandb run
-wandb.finish()
+### Main Execution ###
+def main():
+    # Hyperparameters
+    input_size = 256 * 256
+    num_epochs = 20
+    batch_size = 64
+    learning_rate = 0.001
+    
+    # Initialize wandb
+    wandb.init(
+        project="mlp-dots",
+        config={
+            "learning_rate": learning_rate,
+            "epochs": num_epochs,
+            "batch_size": batch_size,
+            "input_size": input_size,
+        }
+    )
+    
+    # Initialize components
+    checkpoint_manager = CheckpointManager()
+    model = OneLayerMLP(input_size).to(device)
+    criterion = nn.MSELoss()
+    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    
+    # Create dataset and dataloader
+    dataset = DotDataset(image_dir='/local/xtong/NN_pretrain/training_data/displays_dpi32')
+    train_loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+    
+    # Create trainer and run training
+    trainer = MLPTrainer(model, criterion, optimizer, checkpoint_manager, device)
+    trainer.train(train_loader, num_epochs)
+    
+    # Test the model
+    test_dir = '/local/xtong/NN_pretrain/training_data/displays_dpi32_MLPtest'
+    trainer.test(test_dir, batch_size)
+    
+    wandb.finish()
+
+if __name__ == "__main__":
+    main()
