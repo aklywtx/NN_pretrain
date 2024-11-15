@@ -205,7 +205,7 @@ def main():
     trainer.train(train_loader, num_epochs)
     
     # Test the model
-    test_dir = '/local/xtong/NN_pretrain/training_data/displays_dpi32_MLPtest'
+    test_dir = '/local/xtong/NN_pretrain/testing_data/displays_dpi32_MLPtest'
     trainer.test(test_dir, batch_size)
     
     wandb.finish()
