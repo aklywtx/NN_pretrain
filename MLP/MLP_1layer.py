@@ -175,9 +175,9 @@ class MLPTrainer:
 def main():
     # Hyperparameters
     input_size = 256 * 256
-    num_epochs = 20
+    num_epochs = 10
     batch_size = 64
-    learning_rate = 0.001
+    learning_rate = 0.0001
     
     # Initialize wandb
     wandb.init(
@@ -205,7 +205,7 @@ def main():
     trainer.train(train_loader, num_epochs)
     
     # Test the model
-    test_dir = '/local/xtong/NN_pretrain/testing_data/displays_dpi32_MLPtest'
+    test_dir = '/local/xtong/NN_pretrain/test_data/displays_dpi32_MLPtest'
     trainer.test(test_dir, batch_size)
     
     wandb.finish()
