@@ -48,7 +48,7 @@ def load_checkpoint(model, checkpoint_path):
 
 
 class DotDataset(Dataset):
-    def __init__(self, image_dir='./training_data/display_dpi32', image_size=None, transform=None):
+    def __init__(self, image_dir='/local/xtong/NN_pretrain/training_data/displays_dpi32', image_size=None, transform=None):
         self.image_dir = image_dir
         self.image_size = image_size
         self.transform = transform
@@ -122,7 +122,7 @@ wandb.init(
 
 ### Dataset and DataLoader ###
 
-dataset = DotDataset(image_dir='./training_data/display_dpi32', image_size=input_size)
+dataset = DotDataset(image_dir='/local/xtong/NN_pretrain/training_data/displays_dpi32', image_size=input_size)
 train_loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
 ### Initialize Model, Loss Function, and Optimizer ###
