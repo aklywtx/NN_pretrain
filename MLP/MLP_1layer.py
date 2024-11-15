@@ -10,6 +10,7 @@ from PIL import Image
 import wandb
 from pathlib import Path
 from tqdm import tqdm
+import pandas as pd
 
 torch.manual_seed(0)
 np.random.seed(0)
@@ -154,6 +155,13 @@ class MLPTrainer:
         predictions = np.array(predictions)
         actual_values = np.array(actual_values)
         
+        # Save predictions and actual values to CSV
+        results_df = pd.DataFrame({
+            'Actual': actual_values.flatten(),
+            'Predicted': predictions.flatten()
+        })
+        results_df.to_csv('test_results.csv', index=False)
+        
         mse = np.mean((predictions - actual_values) ** 2)
         mae = np.mean(np.abs(predictions - actual_values))
         
@@ -161,13 +169,15 @@ class MLPTrainer:
         print(f"Average Loss: {avg_loss:.4f}")
         print(f"MSE: {mse:.4f}")
         print(f"MAE: {mae:.4f}")
+        print(f"Results saved to test_results.csv")
         
+        # Create scatter plot
         plt.figure(figsize=(10, 6))
-        plt.scatter(actual_values, predictions, alpha=0.5)
-        plt.plot([0, 1], [0, 1], 'r--')
-        plt.xlabel('Actual Values')
-        plt.ylabel('Predictions')
-        plt.title('Predictions vs Actual Values')
+        plt.scatter(actual_values, predictions - actual_values, alpha=0.5)
+        # plt.plot([0, 1], [0, 1], 'r--')
+        plt.xlabel('true Values')
+        plt.ylabel('Predictions - true')
+        plt.title('Error vs true values')
         plt.savefig('test_results.png')
         plt.close()
 
