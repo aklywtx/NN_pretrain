@@ -185,7 +185,7 @@ class MLPTrainer:
 def main():
     # Hyperparameters
     input_size = 256 * 256
-    num_epochs = 10
+    num_epochs = 6
     batch_size = 64
     learning_rate = 0.0001
     
