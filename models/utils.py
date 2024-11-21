@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset, DataLoader
 import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
@@ -32,43 +32,66 @@ class CheckpointManager:
         model.load_state_dict(checkpoint['model_state_dict'])
         return checkpoint['epoch'], checkpoint['loss']
 
-class DotDataset(Dataset):
-    def __init__(self, image_dir, for_vit=True, device='cpu'):
-        self.image_dir = image_dir
-        self.for_vit = for_vit
+# class DotDataset(Dataset):
+#     def __init__(self, image_dir, for_vit=True, device='cpu'):
+#         self.image_dir = image_dir
+#         self.for_vit = for_vit
+#         self.device = device
+#         self.data = []
+#         self.labels = []
+        
+#         image_files = [f for f in os.listdir(image_dir) if f.startswith('image_')]
+        
+    #     for img_file in image_files:
+    #         parts = img_file.split('_')
+    #         num_black = int(parts[1])
+    #         num_total = int(parts[2])
+    #         prob = num_black / num_total
+            
+    #         img_path = os.path.join(image_dir, img_file)
+    #         image = Image.open(img_path).convert('RGB')  # Remove .convert('L')
+    #         image = np.array(image) / 255.0  # Normalize to [0,1]
+            
+    #         if self.for_vit:
+    #             image = image.transpose(2, 0, 1)  # Convert from [H, W, C] to [C, H, W] format for ViT
+    #         else:
+    #             image = image.flatten()  # Flatten for MLP
+            
+    #         self.data.append(image)
+    #         self.labels.append(prob)
+            
+    #     self.data = np.array(self.data, dtype=np.float32)
+    #     self.labels = np.array(self.labels, dtype=np.float32)
+
+    # def __len__(self):
+    #     return len(self.data)
+
+    # def __getitem__(self, idx):
+    #     return (torch.tensor(self.data[idx], device=self.device), 
+    #             torch.tensor([self.labels[idx]], dtype=torch.float32, device=self.device))
+
+class CustomImageDataset(Dataset):
+    def __init__(self, image_paths, device):
+        self.image_paths = image_paths
         self.device = device
-        self.data = []
-        self.labels = []
-        
-        image_files = [f for f in os.listdir(image_dir) if f.startswith('image_')]
-        
-        for img_file in image_files:
-            parts = img_file.split('_')
-            num_black = int(parts[1])
-            num_total = int(parts[2])
-            prob = num_black / num_total
-            
-            img_path = os.path.join(image_dir, img_file)
-            image = Image.open(img_path).convert('RGB')  # Remove .convert('L')
-            image = np.array(image) / 255.0  # Normalize to [0,1]
-            
-            if self.for_vit:
-                image = image.transpose(2, 0, 1)  # Convert from [H, W, C] to [C, H, W] format for ViT
-            else:
-                image = image.flatten()  # Flatten for MLPa=
-            
-            self.data.append(image)
-            self.labels.append(prob)
-            
-        self.data = np.array(self.data, dtype=np.float32)
-        self.labels = np.array(self.labels, dtype=np.float32)
+        # self.transform = transform
 
     def __len__(self):
-        return len(self.data)
+        return len(self.image_paths)
 
     def __getitem__(self, idx):
-        return (torch.tensor(self.data[idx], device=self.device), 
-                torch.tensor([self.labels[idx]], dtype=torch.float32, device=self.device))
+        image = Image.open(self.image_paths[idx]).convert('RGB')
+        image = np.array(image)
+        image = image.transpose(2, 0, 1)
+        # if self.transform:
+        #     image = self.transform(image)
+        image_name = self.image_paths[idx].split("/")[-1]
+        num_black = int(image_name.split("_")[1])
+        num_total = int(image_name.split("_")[2])
+        label = num_black / num_total
+        
+        return (torch.tensor(image, device=self.device), torch.tensor(label, dtype=torch.float32, device=self.device))
+
 
 class Trainer:
     def __init__(self, model, criterion, optimizer, checkpoint_manager, device, filename="model", file_id="1", save_checkpoint=False, patience=5, scheduler=None):
@@ -95,6 +118,7 @@ class Trainer:
                 images, labels = images.to(self.device), labels.to(self.device)
                 
                 outputs = self.model(images)
+                outputs = outputs.squeeze(1)
                 loss = self.criterion(outputs, labels)
                 
                 self.optimizer.zero_grad()
@@ -102,6 +126,8 @@ class Trainer:
                 self.optimizer.step()
                 
                 epoch_loss += loss.item()
+                # print('Outputs shape:', outputs.shape)
+                # print('Targets shape:', labels.shape)
             
             train_avg_loss = epoch_loss / len(train_loader)
             

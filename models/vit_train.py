@@ -1,4 +1,4 @@
-from utils import CheckpointManager, DotDataset, Trainer
+from utils import CheckpointManager, Trainer, CustomImageDataset
 from vit import ViT
 import torch
 import torch.nn as nn
@@ -7,6 +7,9 @@ from torch.utils.data import Dataset, DataLoader
 import numpy as np
 import wandb
 import random
+import glob
+import os
+
 
 file_name = __file__.split("/")[-1]
 
@@ -70,15 +73,27 @@ def main():
     )
     
     # Create dataset and dataloader
-    train_dir = '/scratch/xtong/displays_dpi32_ViT_only100dots'
-    val_dir = '/scratch/xtong/displays_dpi32_ViT_only100dots'
+    
+    image_dir = 'path_to_your_image_directory'  # Replace with your image directory path
+
+# Use glob to find all image files matching the pattern
+    
+    train_dir = '/scratch/xtong/displays_dpi32_ViT_only100dots/'
+    val_dir = '/scratch/xtong/displays_dpi32_ViTval_only100dots'
     test_dir = '/scratch/xtong/displays_dpi32_ViTtest_only100dots'
+    train_paths = glob.glob(os.path.join(train_dir, '*.png'))
+    val_paths = glob.glob(os.path.join(val_dir, '*.png'))
+    test_paths = glob.glob(os.path.join(test_dir, '*.png'))
+    
     # train_dir = './training_data/displays_dpi32_only100dots'
     # val_dir = './val_data/displays_dpi32_MLPval_only100dots'
     # test_dir = './test_data/displays_dpi32_MLPtest_only100dots'
-    train_dataset = DotDataset(image_dir=train_dir, for_vit=True, device=device)
-    val_dataset = DotDataset(image_dir=val_dir, for_vit=True, device=device)
-    test_dataset = DotDataset(image_dir=test_dir, for_vit=True, device=device)
+    train_dataset = CustomImageDataset(train_paths, device=device)
+    val_dataset = CustomImageDataset(val_paths, device=device)
+    test_dataset = CustomImageDataset(test_paths, device=device)
+    # train_dataset = DotDataset(image_dir=train_dir, for_vit=True, device=device)
+    # val_dataset = DotDataset(image_dir=val_dir, for_vit=True, device=device)
+    # test_dataset = DotDataset(image_dir=test_dir, for_vit=True, device=device)
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
