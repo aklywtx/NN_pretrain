@@ -18,8 +18,8 @@ np.random.seed(42)
 file_id = random.randint(0, 1000000)
 
 device = (
-    torch.device("mps") if torch.backends.mps.is_available()
-    else torch.device("cuda") if torch.cuda.is_available()
+    # torch.device("mps") if torch.backends.mps.is_available()
+    torch.device("cuda") if torch.cuda.is_available()
     else torch.device("cpu")
 )
 print(f"Using device: {device}")
@@ -74,7 +74,7 @@ def main():
     
     # Create dataset and dataloader
     
-    image_dir = 'path_to_your_image_directory'  # Replace with your image directory path
+    # image_dir = 'path_to_your_image_directory'  # Replace with your image directory path
 
 # Use glob to find all image files matching the pattern
     
