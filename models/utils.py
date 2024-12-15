@@ -81,7 +81,7 @@ class CustomImageDataset(Dataset):
         return len(self.image_paths)
 
     def __getitem__(self, idx):
-        image = Image.open(self.image_paths[idx]).convert("RGB")
+        image = Image.open(self.image_paths[idx]).convert("L")
         image = np.array(image) / 255.0
         if self.model_type == "vit":
             image = image.transpose(2, 0, 1)

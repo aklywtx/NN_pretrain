@@ -24,7 +24,7 @@ device = (
 print(f"Using device: {device}")
 
 def main():  
-    input_size = 256 * 256 * 3
+    input_size = 256 * 256
     num_epochs = 100
     batch_size = 64
     learning_rate = 1e-4
