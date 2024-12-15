@@ -71,18 +71,22 @@ class CheckpointManager:
     #             torch.tensor([self.labels[idx]], dtype=torch.float32, device=self.device))
 
 class CustomImageDataset(Dataset):
-    def __init__(self, image_paths, device):
+    def __init__(self, image_paths, device, model_type="vit"):
         self.image_paths = image_paths
         self.device = device
+        self.model_type = model_type
         # self.transform = transform
 
     def __len__(self):
         return len(self.image_paths)
 
     def __getitem__(self, idx):
-        image = Image.open(self.image_paths[idx]).convert('RGB')
-        image = np.array(image)
-        image = image.transpose(2, 0, 1)
+        image = Image.open(self.image_paths[idx]).convert("RGB")
+        image = np.array(image) / 255.0
+        if self.model_type == "vit":
+            image = image.transpose(2, 0, 1)
+        elif self.model_type == "mlp":
+            image = image.flatten()
         # if self.transform:
         #     image = self.transform(image)
         image_name = self.image_paths[idx].split("/")[-1]
@@ -90,18 +94,19 @@ class CustomImageDataset(Dataset):
         num_total = int(image_name.split("_")[2])
         label = num_black / num_total
         
-        return (torch.tensor(image, device=self.device), torch.tensor(label, dtype=torch.float32, device=self.device))
+        return (torch.tensor(image, dtype=torch.float32, device=self.device), torch.tensor(label, dtype=torch.float32, device=self.device))
 
 
 class Trainer:
-    def __init__(self, model, criterion, optimizer, checkpoint_manager, device, filename="model", file_id="1", save_checkpoint=False, patience=5, scheduler=None):
+    def __init__(self, model, criterion, optimizer, checkpoint_manager, device, model_type="mlp", dropout=0, save_checkpoint=False, patience=10, scheduler=None, wandb=wandb):
         self.model = model
         self.criterion = criterion
         self.optimizer = optimizer
         self.checkpoint_manager = checkpoint_manager
         self.device = device
-        self.filename = filename
-        self.id = file_id
+        self.model_type = model_type
+        assert model_type in ["mlp", "vit"]
+        self.dropout = dropout
         self.save_checkpoint = save_checkpoint
         self.patience = patience
         self.scheduler = scheduler  # Add scheduler
@@ -118,7 +123,7 @@ class Trainer:
                 images, labels = images.to(self.device), labels.to(self.device)
                 
                 outputs = self.model(images)
-                outputs = outputs.squeeze(1)
+                # outputs = outputs.squeeze(1)
                 loss = self.criterion(outputs, labels)
                 
                 self.optimizer.zero_grad()
@@ -150,16 +155,18 @@ class Trainer:
             if val_loss < best_loss:
                 best_loss = val_loss
                 patience_counter = 0
-                if self.save_checkpoint:
-                    self.checkpoint_manager.save_checkpoint(self.model, epoch + 1, val_loss)
+                # if self.save_checkpoint:
+                #     self.checkpoint_manager.save_checkpoint(self.model, epoch + 1, val_loss)
             else:
                 patience_counter += 1
                 if patience_counter >= self.patience:
                     print(f'\nEarly stopping triggered after {epoch + 1} epochs')
                     break
             
-            if self.save_checkpoint and ((epoch + 1) % 10 == 0 or epoch == num_epochs - 1):
-                self.checkpoint_manager.save_checkpoint(self.model, epoch + 1, val_loss)
+            # if self.save_checkpoint and ((epoch + 1) % 10 == 0 or epoch == num_epochs - 1):
+            #     self.checkpoint_manager.save_checkpoint(self.model, epoch + 1, val_loss)
+        
+
     
     def _validate(self, val_loader):
         self.model.eval()
@@ -200,7 +207,7 @@ class Trainer:
             'Actual': actual_values.flatten(),
             'Predicted': predictions.flatten()
         })
-        results_df.to_csv(f'./results/test_results_{self.filename}_{self.id}.csv', index=False)
+        results_df.to_csv(f'./results/test_results_{self.model_type}_dropout{self.dropout}.csv', index=False)
         
         mse = np.mean((predictions - actual_values) ** 2)
         mae = np.mean(np.abs(predictions - actual_values))
@@ -221,8 +228,8 @@ class Trainer:
         ax2.scatter(actual_values, predictions - actual_values, color="red", alpha=0.5)
         ax2.set_xlabel('True Values')
         ax2.set_ylabel('Predictions - True')
-        ax2.set_title('Error vs True Values')
+        ax2.set_title(f'Error vs True Values ({self.model_type}, dropout{self.dropout})')
         
         plt.tight_layout()
-        plt.savefig(f'./plots/test_results_{self.filename}_{self.id}.png')
+        plt.savefig(f'./plots/test_results_{self.model_type}_dropout{self.dropout}.png')
         plt.close()

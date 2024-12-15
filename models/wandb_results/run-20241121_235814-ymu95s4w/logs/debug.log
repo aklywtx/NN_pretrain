@@ -1,0 +1,39 @@
+2024-11-21 23:58:14,063 INFO    MainThread:71979 [wandb_setup.py:_flush():76] Current SDK version is 0.15.3
+2024-11-21 23:58:14,063 INFO    MainThread:71979 [wandb_setup.py:_flush():76] Configure stats pid to 71979
+2024-11-21 23:58:14,063 INFO    MainThread:71979 [wandb_setup.py:_flush():76] Loading settings from /Users/aklywtx/.config/wandb/settings
+2024-11-21 23:58:14,063 INFO    MainThread:71979 [wandb_setup.py:_flush():76] Loading settings from /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/wandb/settings
+2024-11-21 23:58:14,063 INFO    MainThread:71979 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-11-21 23:58:14,063 INFO    MainThread:71979 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-11-21 23:58:14,063 INFO    MainThread:71979 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'models/vit_train.py', 'program': '/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/vit_train.py'}
+2024-11-21 23:58:14,063 INFO    MainThread:71979 [wandb_init.py:_log_setup():507] Logging user logs to /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/wandb/run-20241121_235814-ymu95s4w/logs/debug.log
+2024-11-21 23:58:14,064 INFO    MainThread:71979 [wandb_init.py:_log_setup():508] Logging internal logs to /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/wandb/run-20241121_235814-ymu95s4w/logs/debug-internal.log
+2024-11-21 23:58:14,064 INFO    MainThread:71979 [wandb_init.py:init():547] calling init triggers
+2024-11-21 23:58:14,064 INFO    MainThread:71979 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.0001, 'epochs': 50, 'batch_size': 64, 'input_size': 256}
+2024-11-21 23:58:14,064 INFO    MainThread:71979 [wandb_init.py:init():596] starting backend
+2024-11-21 23:58:14,064 INFO    MainThread:71979 [wandb_init.py:init():600] setting up manager
+2024-11-21 23:58:14,071 INFO    MainThread:71979 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2024-11-21 23:58:14,073 INFO    MainThread:71979 [wandb_init.py:init():606] backend started and connected
+2024-11-21 23:58:14,075 INFO    MainThread:71979 [wandb_init.py:init():700] updated telemetry
+2024-11-21 23:58:14,098 INFO    MainThread:71979 [wandb_init.py:init():737] communicating run to backend with 60.0 second timeout
+2024-11-21 23:58:14,587 INFO    MainThread:71979 [wandb_run.py:_on_init():2177] communicating current version
+2024-11-21 23:58:14,731 INFO    MainThread:71979 [wandb_run.py:_on_init():2186] got version response upgrade_message: "wandb version 0.18.7 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-11-21 23:58:14,732 INFO    MainThread:71979 [wandb_init.py:init():787] starting run threads in backend
+2024-11-21 23:58:14,803 WARNING MainThread:71979 [wandb_init.py:init():1172] interrupted
+Traceback (most recent call last):
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 1150, in init
+    run = wi.init()
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 799, in init
+    run_start_result = run_start_handle.wait(timeout=30)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/mailbox.py", line 283, in wait
+    found, abandoned = self._slot._get_and_clear(timeout=wait_timeout)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/mailbox.py", line 130, in _get_and_clear
+    if self._wait(timeout=timeout):
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/mailbox.py", line 126, in _wait
+    return self._event.wait(timeout=timeout)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/threading.py", line 581, in wait
+    signaled = self._cond.wait(timeout)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/threading.py", line 316, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

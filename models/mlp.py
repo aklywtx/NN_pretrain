@@ -1,12 +1,12 @@
 import torch.nn as nn
 
 class OneLayerMLP(nn.Module):
-    def __init__(self, input_size, hidden_size, output_size):
+    def __init__(self, input_size, hidden_size, output_size, dropout=0):
         super(OneLayerMLP, self).__init__()
         self.hidden = nn.Linear(input_size, hidden_size)
         self.output = nn.Linear(hidden_size, output_size)
         self.relu = nn.ReLU()
-        self.dropout = nn.Dropout(p=0.7)
+        self.dropout = nn.Dropout(p=dropout)
 
         # self.sigmoid = nn.Sigmoid()
 

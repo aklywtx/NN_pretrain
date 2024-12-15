@@ -36,15 +36,7 @@ def main():
     mlp_dim = 3072
     
     # Initialize wandb
-    wandb.init(
-        project="vit-dots",
-        config={
-            "learning_rate": learning_rate,
-            "epochs": num_epochs,
-            "batch_size": batch_size,
-            "input_size": image_size,
-        }
-    )
+
     
     # Initialize components
     checkpoint_manager = CheckpointManager()
@@ -71,16 +63,11 @@ def main():
         T_max=num_epochs,  # Total number of epochs
         eta_min=1e-6      # Minimum learning rate
     )
-    
-    # Create dataset and dataloader
-    
-    image_dir = 'path_to_your_image_directory'  # Replace with your image directory path
 
-# Use glob to find all image files matching the pattern
-    
-    train_dir = '/scratch/xtong/displays_dpi32_ViT_only100dots/'
-    val_dir = '/scratch/xtong/displays_dpi32_ViTval_only100dots'
-    test_dir = '/scratch/xtong/displays_dpi32_ViTtest_only100dots'
+    # Use glob to find all image files matching the pattern
+    train_dir = '/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/training_data/displays_dpi32_ViT_only100dots/'
+    val_dir = '/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/val_data/displays_dpi32_ViTval_only100dots'
+    test_dir = '/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/test_data/displays_dpi32_ViTtest_only100dots'
     train_paths = glob.glob(os.path.join(train_dir, '*.png'))
     val_paths = glob.glob(os.path.join(val_dir, '*.png'))
     test_paths = glob.glob(os.path.join(test_dir, '*.png'))
@@ -98,9 +85,9 @@ def main():
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
     
-    for (i, j) in test_loader:
-        print(i.size(), j.size())
-        break
+    # for (i, j) in test_loader:
+    #     print(i.size(), j.size())
+    #     break
     
     # Create trainer and run training
     trainer = Trainer(model, criterion, optimizer, checkpoint_manager, device, filename=file_name, file_id=file_id, scheduler=scheduler)
@@ -109,5 +96,43 @@ def main():
     
     wandb.finish()
     
+    
 if __name__ == "__main__":
-    main()
+    image_size = 256
+    num_epochs = 50
+    batch_size = 64
+    learning_rate = 0.0001
+    image_size = 256
+    patch_size = 16
+    dim = 768
+    depth = 8
+    heads = 12
+    mlp_dim = 3072
+    # Initialize a dummy input to estimate memory usage
+    model = ViT(
+        image_size=image_size,
+        patch_size=patch_size,
+        num_classes=1,
+        dim=dim,
+        depth=depth,
+        heads=heads,
+        mlp_dim=mlp_dim,
+        pool='mean',
+        channels=3,
+        dim_head=64,
+        dropout=0.,
+        emb_dropout=0.
+    ).to(device)
+    criterion = nn.L1Loss()
+    optimizer = optim.AdamW(model.parameters(), lr=0.001)
+    dummy_input = torch.randn(1, 3, image_size, image_size)
+
+    # Measure memory after moving model and data to GPU
+    torch.cuda.reset_peak_memory_stats(device)
+    output = model(dummy_input)  # Forward pass
+    loss = criterion(output, torch.randn(1, 1).to(device))  # Compute loss
+    loss.backward()  # Backward pass
+
+    # Get memory usage
+    memory_usage = torch.cuda.max_memory_allocated(device)  # in bytes
+    print(f"Approximate memory usage for batch size 1: {memory_usage / (1024 ** 2):.2f} MB")

@@ -1,0 +1,34 @@
+{
+    "os": "macOS-14.5-arm64-arm-64bit",
+    "python": "3.9.13",
+    "heartbeatAt": "2024-11-21T22:58:14.757310",
+    "startedAt": "2024-11-21T22:58:14.061903",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/vit_train.py",
+    "codePath": "models/vit_train.py",
+    "git": {
+        "remote": "git@github.com:aklywtx/NN_pretrain.git",
+        "commit": "9c277f0e49e094ac63526ffe207b61d71edd84c3"
+    },
+    "email": "aklywtx233@163.com",
+    "root": "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain",
+    "host": "MACBOOK-PRO-341.local",
+    "username": "aklywtx",
+    "executable": "/Users/aklywtx/opt/anaconda3/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "disk": {
+        "total": 926.3517189025879,
+        "used": 824.256275177002
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 32.0
+    }
+}
