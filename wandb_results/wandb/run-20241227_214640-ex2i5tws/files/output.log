@@ -1,0 +1,47 @@
+/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Epochs:   0%|                                                                                                                           | 0/100 [00:00<?, ?it/s]
+Traceback (most recent call last):                                                                                                                              
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/cnn_train.py", line 101, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/cnn_train.py", line 94, in main
+    trainer.train(train_loader, val_loader, num_epochs)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 160, in train
+    outputs = self.model(images)
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/cnn.py", line 21, in forward
+    return self.resnet(x)
+           ^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torchvision/models/resnet.py", line 268, in _forward_impl
+    x = self.conv1(x)
+        ^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/conv.py", line 549, in _conv_forward
+    return F.conv2d(
+           ^^^^^^^^^
+RuntimeError: Input type (MPSFloatType) and weight type (torch.FloatTensor) should be the same

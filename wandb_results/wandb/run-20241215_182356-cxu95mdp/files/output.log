@@ -1,0 +1,32 @@
+Epochs:   0%|                                                                                                                                                   | 0/100 [00:00<?, ?it/s]/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/loss.py:128: UserWarning: Using a target size (torch.Size([64, 1])) that is different to the input size (torch.Size([64])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.l1_loss(input, target, reduction=self.reduction)                                                                                                      | 0/79 [00:00<?, ?it/s]
+                                                                                                                                                                                        /Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/loss.py:128: UserWarning: Using a target size (torch.Size([58, 1])) that is different to the input size (torch.Size([58])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.l1_loss(input, target, reduction=self.reduction)█████████████████████████████████████████████████████████████████████████████████████████▌   | 77/79 [00:05<00:00, 17.64it/s]
+                                                                                                                                                                                        /Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/loss.py:128: UserWarning: Using a target size (torch.Size([57, 1])) that is different to the input size (torch.Size([57])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.l1_loss(input, target, reduction=self.reduction)                                                                                                                             
+Epochs:  24%|█████████████████████████████████                                                                                                         | 24/100 [02:25<07:39,  6.04s/it]
+Testing: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:00<00:00, 10.44it/s]
+
+Early stopping triggered after 25 epochs
+
+Test Results:
+Average Loss: 0.2587
+MSE: 0.0912
+MAE: 0.2587
+(505, 1)
+(505,)
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 84, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 79, in main
+    trainer.test(test_loader)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 203, in test
+    self._analyze_results(avg_loss, predictions, actual_values)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 233, in _analyze_results
+    ax2.scatter(actual_values, predictions - actual_values, color="red", alpha=0.5)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/matplotlib/__init__.py", line 1476, in inner
+    return func(
+           ^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/matplotlib/axes/_axes.py", line 4787, in scatter
+    raise ValueError("x and y must be the same size")
+ValueError: x and y must be the same size

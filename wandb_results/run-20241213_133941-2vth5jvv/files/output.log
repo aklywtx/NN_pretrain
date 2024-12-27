@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 71, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 57, in main
+    val_dataset = CustomImageDataset(image_image_pathsdir=val_dir, device=device, model_type=model_type)
+TypeError: __init__() got an unexpected keyword argument 'image_image_pathsdir'

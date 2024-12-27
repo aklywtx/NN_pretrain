@@ -1,0 +1,16 @@
+{
+  "os": "macOS-14.5-arm64-i386-64bit",
+  "python": "CPython 3.11.6",
+  "startedAt": "2024-12-27T20:44:55.407966Z",
+  "program": "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/cnn_train.py",
+  "codePath": "models/cnn_train.py",
+  "git": {
+    "remote": "git@github.com:aklywtx/NN_pretrain.git",
+    "commit": "4bdebfec1fe02d3556fe7e6f1b00faa85ecbaf5b"
+  },
+  "email": "aklywtx233@163.com",
+  "root": "./wandb_results",
+  "host": "MacBook-Pro-355.local",
+  "executable": "/Users/aklywtx/opt/anaconda3/bin/python",
+  "codePathLocal": "models/cnn_train.py"
+}

@@ -1,0 +1,16 @@
+{"time":"2024-12-22T17:46:38.249972+01:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-22T17:46:38.250014+01:00","level":"INFO","msg":"created symlink","path":"wandb_results/wandb/run-20241222_174638-hci48cte/logs/debug-core.log"}
+{"time":"2024-12-22T17:46:38.364526+01:00","level":"INFO","msg":"created new stream","id":"hci48cte"}
+{"time":"2024-12-22T17:46:38.364611+01:00","level":"INFO","msg":"stream: started","id":"hci48cte"}
+{"time":"2024-12-22T17:46:38.36472+01:00","level":"INFO","msg":"handler: started","stream_id":"hci48cte"}
+{"time":"2024-12-22T17:46:38.3648+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"hci48cte"}
+{"time":"2024-12-22T17:46:38.364843+01:00","level":"INFO","msg":"sender: started","stream_id":"hci48cte"}
+{"time":"2024-12-22T17:46:38.685321+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-22T17:46:39.928171+01:00","level":"INFO","msg":"stream: closing","id":"hci48cte"}
+{"time":"2024-12-22T17:46:39.928211+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-22T17:46:39.928548+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-22T17:46:40.603214+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-22T17:46:40.842675+01:00","level":"INFO","msg":"handler: closed","stream_id":"hci48cte"}
+{"time":"2024-12-22T17:46:40.84269+01:00","level":"INFO","msg":"sender: closed","stream_id":"hci48cte"}
+{"time":"2024-12-22T17:46:40.842677+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"hci48cte"}
+{"time":"2024-12-22T17:46:40.842975+01:00","level":"INFO","msg":"stream: closed","id":"hci48cte"}

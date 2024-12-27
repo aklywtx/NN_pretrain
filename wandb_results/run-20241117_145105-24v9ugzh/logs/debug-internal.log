@@ -1,0 +1,233 @@
+2024-11-17 14:51:05,280 INFO    StreamThr :22111 [internal.py:wandb_internal():86] W&B internal server running at pid: 22111, started at: 2024-11-17 14:51:05.280082
+2024-11-17 14:51:05,281 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: status
+2024-11-17 14:51:05,282 INFO    WriterThread:22111 [datastore.py:open_for_write():85] open: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/run-24v9ugzh.wandb
+2024-11-17 14:51:05,282 DEBUG   SenderThread:22111 [sender.py:send():375] send: header
+2024-11-17 14:51:05,301 DEBUG   SenderThread:22111 [sender.py:send():375] send: run
+2024-11-17 14:51:05,810 INFO    SenderThread:22111 [dir_watcher.py:__init__():219] watching files in: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files
+2024-11-17 14:51:05,811 INFO    SenderThread:22111 [sender.py:_start_run_threads():1124] run started: 24v9ugzh with start time 1731851465.278678
+2024-11-17 14:51:05,811 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: summary_record
+2024-11-17 14:51:05,811 INFO    SenderThread:22111 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-11-17 14:51:05,813 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: check_version
+2024-11-17 14:51:05,813 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: check_version
+2024-11-17 14:51:06,048 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: run_start
+2024-11-17 14:51:06,059 DEBUG   HandlerThread:22111 [system_info.py:__init__():31] System info init
+2024-11-17 14:51:06,059 DEBUG   HandlerThread:22111 [system_info.py:__init__():46] System info init done
+2024-11-17 14:51:06,059 INFO    HandlerThread:22111 [system_monitor.py:start():181] Starting system monitor
+2024-11-17 14:51:06,059 INFO    SystemMonitor:22111 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2024-11-17 14:51:06,060 INFO    HandlerThread:22111 [system_monitor.py:probe():201] Collecting system info
+2024-11-17 14:51:06,060 DEBUG   HandlerThread:22111 [system_info.py:probe():195] Probing system
+2024-11-17 14:51:06,060 INFO    SystemMonitor:22111 [interfaces.py:start():190] Started cpu monitoring
+2024-11-17 14:51:06,060 INFO    SystemMonitor:22111 [interfaces.py:start():190] Started disk monitoring
+2024-11-17 14:51:06,060 INFO    SystemMonitor:22111 [interfaces.py:start():190] Started memory monitoring
+2024-11-17 14:51:06,061 INFO    SystemMonitor:22111 [interfaces.py:start():190] Started network monitoring
+2024-11-17 14:51:06,064 DEBUG   HandlerThread:22111 [system_info.py:_probe_git():180] Probing git
+2024-11-17 14:51:06,091 DEBUG   HandlerThread:22111 [system_info.py:_probe_git():188] Probing git done
+2024-11-17 14:51:06,091 DEBUG   HandlerThread:22111 [system_info.py:probe():240] Probing system done
+2024-11-17 14:51:06,091 DEBUG   HandlerThread:22111 [system_monitor.py:probe():210] {'os': 'macOS-14.5-arm64-i386-64bit', 'python': '3.9.13', 'heartbeatAt': '2024-11-17T13:51:06.060283', 'startedAt': '2024-11-17T13:51:05.207095', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py', 'codePath': 'models/mlp_train.py', 'git': {'remote': 'git@github.com:aklywtx/NN_pretrain.git', 'commit': '79fb9213d8f97bc1c37c0dd0a2a01a0ea0927308'}, 'email': 'aklywtx233@163.com', 'root': '/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain', 'host': 'MACBOOK-PRO-341.local', 'username': 'aklywtx', 'executable': '/Users/aklywtx/opt/anaconda3/bin/python', 'cpu_count': 8, 'cpu_count_logical': 8, 'disk': {'total': 926.3517189025879, 'used': 812.9098968505859}, 'memory': {'total': 32.0}}
+2024-11-17 14:51:06,091 INFO    HandlerThread:22111 [system_monitor.py:probe():211] Finished collecting system info
+2024-11-17 14:51:06,091 INFO    HandlerThread:22111 [system_monitor.py:probe():214] Publishing system info
+2024-11-17 14:51:06,091 DEBUG   HandlerThread:22111 [system_info.py:_save_pip():51] Saving list of pip packages installed into the current environment
+2024-11-17 14:51:06,092 DEBUG   HandlerThread:22111 [system_info.py:_save_pip():67] Saving pip packages done
+2024-11-17 14:51:06,092 DEBUG   HandlerThread:22111 [system_info.py:_save_conda():74] Saving list of conda packages installed into the current environment
+2024-11-17 14:51:06,817 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_created():278] file/dir created: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/wandb-summary.json
+2024-11-17 14:51:06,817 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_created():278] file/dir created: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/conda-environment.yaml
+2024-11-17 14:51:06,817 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_created():278] file/dir created: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/requirements.txt
+2024-11-17 14:51:23,752 DEBUG   HandlerThread:22111 [system_info.py:_save_conda():86] Saving conda packages done
+2024-11-17 14:51:23,753 INFO    HandlerThread:22111 [system_monitor.py:probe():216] Finished publishing system info
+2024-11-17 14:51:23,761 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: status_report
+2024-11-17 14:51:23,762 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: keepalive
+2024-11-17 14:51:23,762 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: status_report
+2024-11-17 14:51:23,762 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: keepalive
+2024-11-17 14:51:23,762 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: keepalive
+2024-11-17 14:51:23,762 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: status_report
+2024-11-17 14:51:23,762 DEBUG   SenderThread:22111 [sender.py:send():375] send: files
+2024-11-17 14:51:23,762 INFO    SenderThread:22111 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2024-11-17 14:51:23,765 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: stop_status
+2024-11-17 14:51:23,765 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: stop_status
+2024-11-17 14:51:23,890 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/conda-environment.yaml
+2024-11-17 14:51:23,890 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_created():278] file/dir created: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/wandb-metadata.json
+2024-11-17 14:51:24,064 DEBUG   SenderThread:22111 [sender.py:send():375] send: telemetry
+2024-11-17 14:51:24,346 INFO    wandb-upload_0:22111 [upload_job.py:push():137] Uploaded file /var/folders/b8/j860yxxx1bb1pjgc34kr65dm0000gn/T/tmpp2l99d8dwandb/zibmrp90-wandb-metadata.json
+2024-11-17 14:51:27,075 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: status_report
+2024-11-17 14:51:32,096 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: status_report
+2024-11-17 14:51:37,119 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: status_report
+2024-11-17 14:51:37,930 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/config.yaml
+2024-11-17 14:51:38,770 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: stop_status
+2024-11-17 14:51:38,770 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: stop_status
+2024-11-17 14:51:40,946 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_created():278] file/dir created: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:51:42,378 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: status_report
+2024-11-17 14:51:42,956 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:51:43,880 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: partial_history
+2024-11-17 14:51:43,881 DEBUG   SenderThread:22111 [sender.py:send():375] send: history
+2024-11-17 14:51:43,882 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: summary_record
+2024-11-17 14:51:43,882 INFO    SenderThread:22111 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-11-17 14:51:43,961 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/wandb-summary.json
+2024-11-17 14:51:44,966 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:51:46,973 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:51:47,013 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: partial_history
+2024-11-17 14:51:47,014 DEBUG   SenderThread:22111 [sender.py:send():375] send: history
+2024-11-17 14:51:47,014 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: summary_record
+2024-11-17 14:51:47,015 INFO    SenderThread:22111 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-11-17 14:51:47,444 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: status_report
+2024-11-17 14:51:47,978 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/wandb-summary.json
+2024-11-17 14:51:48,980 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:51:50,304 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: partial_history
+2024-11-17 14:51:50,305 DEBUG   SenderThread:22111 [sender.py:send():375] send: history
+2024-11-17 14:51:50,305 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: summary_record
+2024-11-17 14:51:50,305 INFO    SenderThread:22111 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-11-17 14:51:50,990 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:51:50,990 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/wandb-summary.json
+2024-11-17 14:51:52,530 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: status_report
+2024-11-17 14:51:52,997 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:51:53,514 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: partial_history
+2024-11-17 14:51:53,514 DEBUG   SenderThread:22111 [sender.py:send():375] send: history
+2024-11-17 14:51:53,514 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: summary_record
+2024-11-17 14:51:53,515 INFO    SenderThread:22111 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-11-17 14:51:53,774 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: stop_status
+2024-11-17 14:51:53,775 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: stop_status
+2024-11-17 14:51:54,000 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/wandb-summary.json
+2024-11-17 14:51:55,006 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:51:56,590 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: partial_history
+2024-11-17 14:51:56,591 DEBUG   SenderThread:22111 [sender.py:send():375] send: history
+2024-11-17 14:51:56,591 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: summary_record
+2024-11-17 14:51:56,591 INFO    SenderThread:22111 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-11-17 14:51:57,016 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:51:57,016 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/wandb-summary.json
+2024-11-17 14:51:57,629 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: status_report
+2024-11-17 14:51:59,020 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:51:59,894 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: partial_history
+2024-11-17 14:51:59,895 DEBUG   SenderThread:22111 [sender.py:send():375] send: history
+2024-11-17 14:51:59,895 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: summary_record
+2024-11-17 14:51:59,896 INFO    SenderThread:22111 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-11-17 14:52:00,025 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/wandb-summary.json
+2024-11-17 14:52:00,649 DEBUG   SenderThread:22111 [sender.py:send():375] send: telemetry
+2024-11-17 14:52:00,649 DEBUG   SenderThread:22111 [sender.py:send():375] send: exit
+2024-11-17 14:52:00,649 INFO    SenderThread:22111 [sender.py:send_exit():598] handling exit code: 0
+2024-11-17 14:52:00,649 INFO    SenderThread:22111 [sender.py:send_exit():600] handling runtime: 54
+2024-11-17 14:52:00,651 INFO    SenderThread:22111 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-11-17 14:52:00,651 INFO    SenderThread:22111 [sender.py:send_exit():606] send defer
+2024-11-17 14:52:00,654 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:00,654 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 0
+2024-11-17 14:52:00,656 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:00,656 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 0
+2024-11-17 14:52:00,656 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 1
+2024-11-17 14:52:00,656 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:00,656 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 1
+2024-11-17 14:52:00,656 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:00,656 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 1
+2024-11-17 14:52:00,656 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 2
+2024-11-17 14:52:00,656 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:00,656 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 2
+2024-11-17 14:52:00,656 INFO    HandlerThread:22111 [system_monitor.py:finish():190] Stopping system monitor
+2024-11-17 14:52:00,656 DEBUG   SystemMonitor:22111 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2024-11-17 14:52:00,656 DEBUG   SystemMonitor:22111 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2024-11-17 14:52:00,656 DEBUG   SystemMonitor:22111 [system_monitor.py:_start():170] Publishing last batch of metrics
+2024-11-17 14:52:00,658 INFO    HandlerThread:22111 [interfaces.py:finish():202] Joined cpu monitor
+2024-11-17 14:52:00,658 INFO    HandlerThread:22111 [interfaces.py:finish():202] Joined disk monitor
+2024-11-17 14:52:00,658 INFO    HandlerThread:22111 [interfaces.py:finish():202] Joined memory monitor
+2024-11-17 14:52:00,659 INFO    HandlerThread:22111 [interfaces.py:finish():202] Joined network monitor
+2024-11-17 14:52:00,661 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:00,661 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 2
+2024-11-17 14:52:00,661 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 3
+2024-11-17 14:52:00,661 DEBUG   SenderThread:22111 [sender.py:send():375] send: stats
+2024-11-17 14:52:00,670 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:00,670 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 3
+2024-11-17 14:52:00,674 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:00,674 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 3
+2024-11-17 14:52:00,674 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 4
+2024-11-17 14:52:00,675 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:00,675 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 4
+2024-11-17 14:52:00,675 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:00,675 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 4
+2024-11-17 14:52:00,675 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 5
+2024-11-17 14:52:00,676 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:00,676 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 5
+2024-11-17 14:52:00,676 DEBUG   SenderThread:22111 [sender.py:send():375] send: summary
+2024-11-17 14:52:00,677 INFO    SenderThread:22111 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2024-11-17 14:52:00,677 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:00,677 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 5
+2024-11-17 14:52:00,677 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 6
+2024-11-17 14:52:00,679 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:00,679 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 6
+2024-11-17 14:52:00,679 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:00,679 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 6
+2024-11-17 14:52:00,682 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: status_report
+2024-11-17 14:52:00,834 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 7
+2024-11-17 14:52:00,834 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:00,835 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 7
+2024-11-17 14:52:00,835 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:00,835 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 7
+2024-11-17 14:52:01,026 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:52:01,026 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/wandb-summary.json
+2024-11-17 14:52:01,026 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/config.yaml
+2024-11-17 14:52:01,653 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: poll_exit
+2024-11-17 14:52:03,037 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:52:04,376 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 8
+2024-11-17 14:52:04,376 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: poll_exit
+2024-11-17 14:52:04,377 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:04,377 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 8
+2024-11-17 14:52:04,378 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:04,378 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 8
+2024-11-17 14:52:04,385 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 9
+2024-11-17 14:52:04,386 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:04,386 DEBUG   SenderThread:22111 [sender.py:send():375] send: artifact
+2024-11-17 14:52:04,386 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 9
+2024-11-17 14:52:05,044 INFO    Thread-12 :22111 [dir_watcher.py:_on_file_modified():295] file/dir modified: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:52:05,187 INFO    SenderThread:22111 [sender.py:send_artifact():1474] sent artifact job-git_github.com_aklywtx_NN_pretrain.git_models_mlp_train.py - {'id': 'QXJ0aWZhY3Q6MTMzODc5MTA0Nw==', 'digest': 'f0447280fc252b8c40712c59613e8987', 'state': 'COMMITTED', 'aliases': [{'artifactCollectionName': 'job-git_github.com_aklywtx_NN_pretrain.git_models_mlp_train.py', 'alias': 'latest'}, {'artifactCollectionName': 'job-git_github.com_aklywtx_NN_pretrain.git_models_mlp_train.py', 'alias': 'v0'}], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjQ5NjYxOTk2OQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTMzODc5MTA0Nw==', 'versionIndex': 0}}, 'version': 'v0'}
+2024-11-17 14:52:05,188 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:05,188 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 9
+2024-11-17 14:52:05,188 INFO    SenderThread:22111 [dir_watcher.py:finish():365] shutting down directory watcher
+2024-11-17 14:52:06,047 INFO    SenderThread:22111 [dir_watcher.py:finish():395] scan: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files
+2024-11-17 14:52:06,047 INFO    SenderThread:22111 [dir_watcher.py:finish():409] scan save: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/requirements.txt requirements.txt
+2024-11-17 14:52:06,047 INFO    SenderThread:22111 [dir_watcher.py:finish():409] scan save: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log output.log
+2024-11-17 14:52:06,047 INFO    SenderThread:22111 [dir_watcher.py:finish():409] scan save: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/config.yaml config.yaml
+2024-11-17 14:52:06,049 INFO    SenderThread:22111 [dir_watcher.py:finish():409] scan save: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/wandb-summary.json wandb-summary.json
+2024-11-17 14:52:06,052 INFO    SenderThread:22111 [dir_watcher.py:finish():409] scan save: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/conda-environment.yaml conda-environment.yaml
+2024-11-17 14:52:06,054 INFO    SenderThread:22111 [dir_watcher.py:finish():409] scan save: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/wandb-metadata.json wandb-metadata.json
+2024-11-17 14:52:06,056 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 10
+2024-11-17 14:52:06,057 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:06,057 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 10
+2024-11-17 14:52:06,057 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:06,057 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 10
+2024-11-17 14:52:06,057 INFO    SenderThread:22111 [file_pusher.py:finish():167] shutting down file pusher
+2024-11-17 14:52:06,481 INFO    wandb-upload_1:22111 [upload_job.py:push():137] Uploaded file /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/requirements.txt
+2024-11-17 14:52:06,554 INFO    wandb-upload_2:22111 [upload_job.py:push():137] Uploaded file /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/output.log
+2024-11-17 14:52:06,565 INFO    wandb-upload_0:22111 [upload_job.py:push():137] Uploaded file /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/config.yaml
+2024-11-17 14:52:06,569 INFO    wandb-upload_3:22111 [upload_job.py:push():137] Uploaded file /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/wandb-summary.json
+2024-11-17 14:52:06,659 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: keepalive
+2024-11-17 14:52:06,747 INFO    wandb-upload_4:22111 [upload_job.py:push():137] Uploaded file /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/files/conda-environment.yaml
+2024-11-17 14:52:06,947 INFO    Thread-11 :22111 [sender.py:transition_state():626] send defer: 11
+2024-11-17 14:52:06,948 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:06,948 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 11
+2024-11-17 14:52:06,948 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:06,949 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 11
+2024-11-17 14:52:06,949 INFO    SenderThread:22111 [file_pusher.py:join():172] waiting for file pusher
+2024-11-17 14:52:06,949 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 12
+2024-11-17 14:52:06,949 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:06,949 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 12
+2024-11-17 14:52:06,949 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:06,949 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 12
+2024-11-17 14:52:07,118 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 13
+2024-11-17 14:52:07,119 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:07,119 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 13
+2024-11-17 14:52:07,119 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:07,119 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 13
+2024-11-17 14:52:07,119 INFO    SenderThread:22111 [sender.py:transition_state():626] send defer: 14
+2024-11-17 14:52:07,119 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: defer
+2024-11-17 14:52:07,119 INFO    HandlerThread:22111 [handler.py:handle_request_defer():170] handle defer: 14
+2024-11-17 14:52:07,120 DEBUG   SenderThread:22111 [sender.py:send():375] send: final
+2024-11-17 14:52:07,120 DEBUG   SenderThread:22111 [sender.py:send():375] send: footer
+2024-11-17 14:52:07,120 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: defer
+2024-11-17 14:52:07,120 INFO    SenderThread:22111 [sender.py:send_request_defer():622] handle sender defer: 14
+2024-11-17 14:52:07,121 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: poll_exit
+2024-11-17 14:52:07,122 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: server_info
+2024-11-17 14:52:07,122 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: get_summary
+2024-11-17 14:52:07,122 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: sampled_history
+2024-11-17 14:52:07,124 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: poll_exit
+2024-11-17 14:52:07,124 DEBUG   SenderThread:22111 [sender.py:send_request():402] send_request: server_info
+2024-11-17 14:52:07,272 DEBUG   HandlerThread:22111 [handler.py:handle_request():144] handle_request: shutdown
+2024-11-17 14:52:07,273 INFO    HandlerThread:22111 [handler.py:finish():842] shutting down handler
+2024-11-17 14:52:08,128 INFO    WriterThread:22111 [datastore.py:close():298] close: /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145105-24v9ugzh/run-24v9ugzh.wandb
+2024-11-17 14:52:08,274 INFO    SenderThread:22111 [sender.py:finish():1550] shutting down sender
+2024-11-17 14:52:08,274 INFO    SenderThread:22111 [file_pusher.py:finish():167] shutting down file pusher
+2024-11-17 14:52:08,274 INFO    SenderThread:22111 [file_pusher.py:join():172] waiting for file pusher

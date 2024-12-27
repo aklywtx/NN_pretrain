@@ -1,0 +1,16 @@
+{"time":"2024-12-15T18:23:56.484176+01:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-15T18:23:56.484215+01:00","level":"INFO","msg":"created symlink","path":"wandb_results/wandb/run-20241215_182356-cxu95mdp/logs/debug-core.log"}
+{"time":"2024-12-15T18:23:56.59743+01:00","level":"INFO","msg":"created new stream","id":"cxu95mdp"}
+{"time":"2024-12-15T18:23:56.597479+01:00","level":"INFO","msg":"stream: started","id":"cxu95mdp"}
+{"time":"2024-12-15T18:23:56.5975+01:00","level":"INFO","msg":"sender: started","stream_id":"cxu95mdp"}
+{"time":"2024-12-15T18:23:56.597503+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"cxu95mdp"}
+{"time":"2024-12-15T18:23:56.597549+01:00","level":"INFO","msg":"handler: started","stream_id":"cxu95mdp"}
+{"time":"2024-12-15T18:23:56.918253+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-15T18:26:33.500008+01:00","level":"INFO","msg":"stream: closing","id":"cxu95mdp"}
+{"time":"2024-12-15T18:26:33.500072+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-15T18:26:33.500976+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-15T18:26:34.209551+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-15T18:26:34.45337+01:00","level":"INFO","msg":"handler: closed","stream_id":"cxu95mdp"}
+{"time":"2024-12-15T18:26:34.453411+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"cxu95mdp"}
+{"time":"2024-12-15T18:26:34.453475+01:00","level":"INFO","msg":"sender: closed","stream_id":"cxu95mdp"}
+{"time":"2024-12-15T18:26:34.453696+01:00","level":"INFO","msg":"stream: closed","id":"cxu95mdp"}

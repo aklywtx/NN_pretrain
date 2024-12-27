@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 63, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 50, in main
+    train_dataset = DotDataset(image_dir=train_dir, for_vit=False, device=device)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 52, in __init__
+    image = Image.open(img_path).convert('L')  # Convert to grayscale
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/PIL/Image.py", line 941, in convert
+    self.load()
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/PIL/ImageFile.py", line 291, in load
+    n, err_code = decoder.decode(b)
+KeyboardInterrupt

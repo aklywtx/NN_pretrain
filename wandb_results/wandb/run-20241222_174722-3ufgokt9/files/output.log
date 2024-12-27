@@ -1,0 +1,26 @@
+Epochs:   0%|                                                                                                                           | 0/100 [00:03<?, ?it/s]
+Traceback (most recent call last):                                                                                                                              
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 83, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 77, in main
+    trainer.train(train_loader, val_loader, num_epochs)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 122, in train
+    for images, labels in tqdm(train_loader, desc=f'Epoch {epoch+1}/{num_epochs}', leave=False):
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/tqdm/std.py", line 1181, in __iter__
+    for obj in iterable:
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 757, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 97, in __getitem__
+    return (torch.tensor(image, dtype=torch.float32, device=self.device), torch.tensor(label, dtype=torch.float32, device=self.device))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

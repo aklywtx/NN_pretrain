@@ -1,0 +1,16 @@
+{"time":"2024-12-27T21:46:04.103046+01:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-27T21:46:04.103085+01:00","level":"INFO","msg":"created symlink","path":"wandb_results/wandb/run-20241227_214604-thsls40j/logs/debug-core.log"}
+{"time":"2024-12-27T21:46:04.222241+01:00","level":"INFO","msg":"created new stream","id":"thsls40j"}
+{"time":"2024-12-27T21:46:04.222326+01:00","level":"INFO","msg":"stream: started","id":"thsls40j"}
+{"time":"2024-12-27T21:46:04.222623+01:00","level":"INFO","msg":"handler: started","stream_id":"thsls40j"}
+{"time":"2024-12-27T21:46:04.222636+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"thsls40j"}
+{"time":"2024-12-27T21:46:04.222667+01:00","level":"INFO","msg":"sender: started","stream_id":"thsls40j"}
+{"time":"2024-12-27T21:46:04.647972+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-27T21:46:05.207259+01:00","level":"INFO","msg":"stream: closing","id":"thsls40j"}
+{"time":"2024-12-27T21:46:05.207524+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-27T21:46:05.208167+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-27T21:46:06.281767+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-27T21:46:06.604809+01:00","level":"INFO","msg":"handler: closed","stream_id":"thsls40j"}
+{"time":"2024-12-27T21:46:06.604825+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"thsls40j"}
+{"time":"2024-12-27T21:46:06.605313+01:00","level":"INFO","msg":"sender: closed","stream_id":"thsls40j"}
+{"time":"2024-12-27T21:46:06.605642+01:00","level":"INFO","msg":"stream: closed","id":"thsls40j"}

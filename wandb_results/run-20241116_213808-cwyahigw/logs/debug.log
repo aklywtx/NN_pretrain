@@ -1,0 +1,34 @@
+2024-11-16 21:38:08,824 INFO    MainThread:85236 [wandb_setup.py:_flush():76] Current SDK version is 0.15.3
+2024-11-16 21:38:08,824 INFO    MainThread:85236 [wandb_setup.py:_flush():76] Configure stats pid to 85236
+2024-11-16 21:38:08,824 INFO    MainThread:85236 [wandb_setup.py:_flush():76] Loading settings from /Users/aklywtx/.config/wandb/settings
+2024-11-16 21:38:08,824 INFO    MainThread:85236 [wandb_setup.py:_flush():76] Loading settings from /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/settings
+2024-11-16 21:38:08,824 INFO    MainThread:85236 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-11-16 21:38:08,824 INFO    MainThread:85236 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-11-16 21:38:08,824 INFO    MainThread:85236 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'MLP/MLP_1layer_mps_only100dots.py', 'program': '/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/MLP/MLP_1layer_mps_only100dots.py'}
+2024-11-16 21:38:08,824 INFO    MainThread:85236 [wandb_init.py:_log_setup():507] Logging user logs to /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241116_213808-cwyahigw/logs/debug.log
+2024-11-16 21:38:08,824 INFO    MainThread:85236 [wandb_init.py:_log_setup():508] Logging internal logs to /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241116_213808-cwyahigw/logs/debug-internal.log
+2024-11-16 21:38:08,825 INFO    MainThread:85236 [wandb_init.py:init():547] calling init triggers
+2024-11-16 21:38:08,825 INFO    MainThread:85236 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.001, 'epochs': 6, 'batch_size': 64, 'input_size': 65536}
+2024-11-16 21:38:08,825 INFO    MainThread:85236 [wandb_init.py:init():596] starting backend
+2024-11-16 21:38:08,825 INFO    MainThread:85236 [wandb_init.py:init():600] setting up manager
+2024-11-16 21:38:08,925 INFO    MainThread:85236 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2024-11-16 21:38:08,927 INFO    MainThread:85236 [wandb_init.py:init():606] backend started and connected
+2024-11-16 21:38:08,932 INFO    MainThread:85236 [wandb_init.py:init():700] updated telemetry
+2024-11-16 21:38:08,985 INFO    MainThread:85236 [wandb_init.py:init():737] communicating run to backend with 60.0 second timeout
+2024-11-16 21:38:09,407 INFO    MainThread:85236 [wandb_run.py:_on_init():2177] communicating current version
+2024-11-16 21:38:09,536 INFO    MainThread:85236 [wandb_run.py:_on_init():2186] got version response upgrade_message: "wandb version 0.18.7 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2024-11-16 21:38:09,536 INFO    MainThread:85236 [wandb_init.py:init():787] starting run threads in backend
+2024-11-16 21:38:27,157 INFO    MainThread:85236 [wandb_run.py:_console_start():2158] atexit reg
+2024-11-16 21:38:27,158 INFO    MainThread:85236 [wandb_run.py:_redirect():2013] redirect: SettingsConsole.WRAP_RAW
+2024-11-16 21:38:27,158 INFO    MainThread:85236 [wandb_run.py:_redirect():2078] Wrapping output streams.
+2024-11-16 21:38:27,158 INFO    MainThread:85236 [wandb_run.py:_redirect():2103] Redirects installed.
+2024-11-16 21:38:27,159 INFO    MainThread:85236 [wandb_init.py:init():829] run started, returning control to user process
+2024-11-16 21:38:50,257 INFO    MainThread:85236 [wandb_run.py:_finish():1893] finishing run aklywtx233/mlp-dots/cwyahigw
+2024-11-16 21:38:50,257 INFO    MainThread:85236 [wandb_run.py:_atexit_cleanup():2127] got exitcode: 0
+2024-11-16 21:38:50,257 INFO    MainThread:85236 [wandb_run.py:_restore():2110] restore
+2024-11-16 21:38:50,257 INFO    MainThread:85236 [wandb_run.py:_restore():2116] restore done
+2024-11-16 21:38:55,940 INFO    MainThread:85236 [wandb_run.py:_footer_history_summary_info():3469] rendering history
+2024-11-16 21:38:55,941 INFO    MainThread:85236 [wandb_run.py:_footer_history_summary_info():3501] rendering summary
+2024-11-16 21:38:55,947 INFO    MainThread:85236 [wandb_run.py:_footer_sync_info():3428] logging synced files

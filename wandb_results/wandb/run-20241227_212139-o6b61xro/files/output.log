@@ -1,0 +1,26 @@
+Epochs:   0%|                                                                                                                            | 0/50 [00:00<?, ?it/s]
+Traceback (most recent call last):                                                                                                                              
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/vit_train.py", line 146, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/vit_train.py", line 139, in main
+    trainer.train(train_loader, val_loader, num_epochs)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 153, in train
+    for images, labels in tqdm(
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/tqdm/std.py", line 1181, in __iter__
+    for obj in iterable:
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 757, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 97, in __getitem__
+    image = image.transpose(2, 0, 1)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: axes don't match array

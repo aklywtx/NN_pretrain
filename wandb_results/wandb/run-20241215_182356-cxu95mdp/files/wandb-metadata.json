@@ -1,0 +1,44 @@
+{
+  "os": "macOS-14.5-arm64-i386-64bit",
+  "python": "CPython 3.11.6",
+  "startedAt": "2024-12-15T17:23:56.482306Z",
+  "program": "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py",
+  "codePath": "models/mlp_train.py",
+  "git": {
+    "remote": "git@github.com:aklywtx/NN_pretrain.git",
+    "commit": "4bdebfec1fe02d3556fe7e6f1b00faa85ecbaf5b"
+  },
+  "email": "aklywtx233@163.com",
+  "root": "./wandb_results",
+  "host": "MACBOOK-PRO-341.local",
+  "executable": "/Users/aklywtx/opt/anaconda3/bin/python",
+  "codePathLocal": "models/mlp_train.py",
+  "cpu_count": 8,
+  "cpu_count_logical": 8,
+  "disk": {
+    "/": {
+      "total": "994662584320",
+      "used": "970426273792"
+    },
+    "/System/Volumes/Data": {
+      "total": "994662584320",
+      "used": "970426273792"
+    }
+  },
+  "memory": {
+    "total": "34359738368"
+  },
+  "cpu": {
+    "count": 8,
+    "countLogical": 8
+  },
+  "apple": {
+    "name": "Unknown",
+    "ecpuCores": 2,
+    "pcpuCores": 6,
+    "gpuCores": 14,
+    "memoryGb": 32,
+    "swapTotalBytes": "24696061952",
+    "ramTotalBytes": "34359738368"
+  }
+}

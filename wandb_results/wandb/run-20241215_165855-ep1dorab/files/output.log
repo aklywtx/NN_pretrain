@@ -1,0 +1,29 @@
+Epochs:   0%|                                                                                                                                                   | 0/100 [00:00<?, ?it/s]/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/loss.py:128: UserWarning: Using a target size (torch.Size([64])) that is different to the input size (torch.Size([64, 1])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.l1_loss(input, target, reduction=self.reduction)                                                                                                                             
+/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/loss.py:128: UserWarning: Using a target size (torch.Size([57])) that is different to the input size (torch.Size([57, 1])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.l1_loss(input, target, reduction=self.reduction)
+Epochs:  15%|████████████████████▋                                                                                                                     | 15/100 [04:16<24:15, 17.13s/it]
+Testing: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:01<00:00,  5.93it/s]
+
+Early stopping triggered after 16 epochs
+
+Test Results:
+Average Loss: 0.2864
+MSE: 0.1219
+MAE: 0.2891
+(505,)
+(505, 1)
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 78, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 73, in main
+    trainer.test(test_loader)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 201, in test
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 231, in _analyze_results
+    ax1.set_title('Predictions vs True Values')
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/matplotlib/__init__.py", line 1476, in inner
+    return func(
+           ^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/matplotlib/axes/_axes.py", line 4787, in scatter
+    raise ValueError("x and y must be the same size")
+ValueError: x and y must be the same size

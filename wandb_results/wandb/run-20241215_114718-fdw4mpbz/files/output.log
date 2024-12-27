@@ -1,0 +1,28 @@
+Epochs:   0%|                                                                                                                                                                                 | 0/100 [00:00<?, ?it/s]/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/loss.py:128: UserWarning: Using a target size (torch.Size([64])) that is different to the input size (torch.Size([64, 1])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.l1_loss(input, target, reduction=self.reduction)                                                                                                                                                           
+/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/loss.py:128: UserWarning: Using a target size (torch.Size([57])) that is different to the input size (torch.Size([57, 1])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.l1_loss(input, target, reduction=self.reduction)
+Epochs:  27%|█████████████████████████████████████████████▎                                                                                                                          | 27/100 [05:19<14:24, 11.84s/it]
+Testing: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:00<00:00,  8.20it/s]
+
+Early stopping triggered after 28 epochs
+
+Test Results:
+Average Loss: 0.2527
+MSE: 0.0850
+MAE: 0.2525
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 77, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 72, in main
+    trainer.test(test_loader)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 200, in test
+    self._analyze_results(avg_loss, predictions, actual_values)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 228, in _analyze_results
+    ax2.scatter(actual_values, predictions - actual_values, color="red", alpha=0.5)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/matplotlib/__init__.py", line 1476, in inner
+    return func(
+           ^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/matplotlib/axes/_axes.py", line 4787, in scatter
+    raise ValueError("x and y must be the same size")
+ValueError: x and y must be the same size

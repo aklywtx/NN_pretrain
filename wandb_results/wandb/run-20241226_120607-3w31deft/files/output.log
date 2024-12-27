@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 106, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 59, in main
+    model = model_choice(input_size, hidden_size, output_size, dropout=dropout, noise_std=noise_std).to(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp.py", line 81, in __init__
+    super(ReLUMLP, self).__init__()
+    ^^^^^^^^^^^^^^^^^^^^
+TypeError: super(type, obj): obj must be an instance or subtype of type

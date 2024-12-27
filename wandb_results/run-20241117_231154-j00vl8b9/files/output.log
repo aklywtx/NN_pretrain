@@ -1,0 +1,29 @@
+Epochs:   0%|                                                                                                         | 0/50 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/vit_train.py", line 81, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/vit_train.py", line 75, in main
+    trainer.train(train_loader, val_loader, num_epochs)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 97, in train
+    outputs = self.model(images)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/vit.py", line 141, in forward
+    x = self.to_patch_embedding(img)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/torch/nn/modules/normalization.py", line 201, in forward
+    return F.layer_norm(
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/torch/nn/functional.py", line 2573, in layer_norm
+    return torch.layer_norm(input, normalized_shape, weight, bias, eps, torch.backends.cudnn.enabled)
+RuntimeError: Given normalized_shape=[768], expected input with shape [*, 768], but got input of size[64, 256, 1024]

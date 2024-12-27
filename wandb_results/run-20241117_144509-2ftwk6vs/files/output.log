@@ -1,0 +1,14 @@
+Epochs:   0%|                                                                                                                                                                             | 0/6 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 60, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 55, in main
+    trainer.test(test_dir, batch_size)
+TypeError: test() takes 2 positional arguments but 3 were given

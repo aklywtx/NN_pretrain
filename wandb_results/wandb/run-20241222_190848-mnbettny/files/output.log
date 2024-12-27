@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 85, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 59, in main
+    model = model_choice(input_size, hidden_size, output_size).to(device)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp.py", line 62, in __init__
+    super(TwoLinear, self).__init__()
+    ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: super(type, obj): obj must be an instance or subtype of type

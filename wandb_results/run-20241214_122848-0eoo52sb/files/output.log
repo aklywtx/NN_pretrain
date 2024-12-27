@@ -1,0 +1,239 @@
+Epochs:   0%|                                                                                                                    | 0/100 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+  return F.l1_loss(input, target, reduction=self.reduction)
+/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/torch/nn/modules/loss.py:101: UserWarning: Using a target size (torch.Size([57])) that is different to the input size (torch.Size([57, 1])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.l1_loss(input, target, reduction=self.reduction)
+Epochs:   1%|█                                                                                                           | 1/100 [00:18<30:07, 18.26s/it]
+
+
+
+
+
+
+
+
+Epochs:   2%|██▏                                                                                                         | 2/100 [00:36<30:12, 18.50s/it]
+
+
+
+
+
+
+
+
+
+Epochs:   3%|███▏                                                                                                        | 3/100 [00:57<31:06, 19.24s/it]
+
+
+
+
+
+
+
+
+Epochs:   4%|████▎                                                                                                       | 4/100 [01:14<29:21, 18.35s/it]
+
+
+
+
+
+
+
+Epochs:   5%|█████▍                                                                                                      | 5/100 [01:30<28:09, 17.79s/it]
+
+
+
+
+
+
+
+Epochs:   6%|██████▍                                                                                                     | 6/100 [01:46<27:00, 17.24s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epochs:   9%|█████████▋                                                                                                  | 9/100 [02:36<25:19, 16.69s/it]
+
+
+
+
+
+
+
+
+
+
+Epochs:  11%|███████████▊                                                                                               | 11/100 [03:08<24:28, 16.50s/it]
+
+
+
+
+
+
+
+Epochs:  12%|████████████▊                                                                                              | 12/100 [03:25<24:10, 16.49s/it]
+
+
+
+
+
+
+
+Epochs:  13%|█████████████▉                                                                                             | 13/100 [03:41<23:48, 16.42s/it]
+
+
+
+
+
+
+
+
+Epochs:  14%|██████████████▉                                                                                            | 14/100 [03:59<24:16, 16.94s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epochs:  17%|██████████████████▏                                                                                        | 17/100 [04:45<21:31, 15.56s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epochs:  19%|████████████████████▎                                                                                      | 19/100 [05:13<19:53, 14.74s/it]
+
+
+
+
+
+
+Epochs:  20%|█████████████████████▍                                                                                     | 20/100 [05:27<19:16, 14.45s/it]
+
+
+
+
+
+
+Epochs:  21%|██████████████████████▍                                                                                    | 21/100 [05:41<18:45, 14.24s/it]
+
+
+
+
+
+
+Epochs:  22%|███████████████████████▌                                                                                   | 22/100 [05:54<18:20, 14.11s/it]
+
+
+
+
+
+
+Epochs:  23%|████████████████████████▌                                                                                  | 23/100 [06:09<18:04, 14.09s/it]
+
+
+
+
+
+
+Epochs:  24%|█████████████████████████▋                                                                                 | 24/100 [06:23<17:56, 14.17s/it]
+
+
+
+
+
+
+Epochs:  25%|██████████████████████████▊                                                                                | 25/100 [06:37<17:44, 14.19s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epochs:  27%|████████████████████████████▉                                                                              | 27/100 [07:07<17:36, 14.47s/it]
+
+
+
+
+
+
+Epochs:  27%|████████████████████████████▉                                                                              | 27/100 [07:21<19:53, 16.35s/it]
+Testing: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:01<00:00,  6.36it/s]
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 76, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 71, in main
+    trainer.test(test_loader)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 200, in test
+    self._analyze_results(avg_loss, predictions, actual_values)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 228, in _analyze_results
+    ax2.scatter(actual_values, predictions - actual_values, color="red", alpha=0.5)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/matplotlib/__init__.py", line 1473, in inner
+    return func(
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/matplotlib/axes/_axes.py", line 4787, in scatter
+    raise ValueError("x and y must be the same size")
+ValueError: x and y must be the same size
+Early stopping triggered after 28 epochs
+Test Results:
+Average Loss: 0.2527
+MSE: 0.0850
+MAE: 0.2525

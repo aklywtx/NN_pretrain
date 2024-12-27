@@ -1,0 +1,39 @@
+Epochs:   0%|                                                                                                                                                           | 0/6 [00:00<?, ?it/s]
+
+
+
+
+
+
+Testing:   0%|                                                                                                                                                          | 0/8 [00:00<?, ?it/s]
+Test Results:
+Average Loss: 0.0536
+MSE: 0.0536
+MAE: 0.1976
+Testing: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:00<00:00, 38.15it/s]
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/MLP/MLP_1layer_mps_only100dots_white.py", line 234, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/MLP/MLP_1layer_mps_only100dots_white.py", line 229, in main
+    trainer.test(test_dir, batch_size)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/MLP/MLP_1layer_mps_only100dots_white.py", line 162, in test
+    self._analyze_results(total_loss / len(test_loader), predictions, actual_values)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/MLP/MLP_1layer_mps_only100dots_white.py", line 191, in _analyze_results
+    plt.savefig(f'./plot/test_results_{file_name}_{file_id}.png')
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/matplotlib/pyplot.py", line 979, in savefig
+    res = fig.savefig(*args, **kwargs)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/matplotlib/figure.py", line 3046, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 2319, in print_figure
+    result = print_method(
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/matplotlib/backend_bases.py", line 1648, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/matplotlib/_api/deprecation.py", line 415, in wrapper
+    return func(*inner_args, **inner_kwargs)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/matplotlib/backends/backend_agg.py", line 541, in print_png
+    mpl.image.imsave(
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/matplotlib/image.py", line 1675, in imsave
+    image.save(fname, **pil_kwargs)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/PIL/Image.py", line 2456, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/plot/test_results_MLP_1layer_mps_only100dots_white.py_53429.png'

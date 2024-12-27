@@ -1,0 +1,30 @@
+{
+    "os": "macOS-14.5-arm64-i386-64bit",
+    "python": "3.9.13",
+    "heartbeatAt": "2024-12-13T12:39:42.677331",
+    "startedAt": "2024-12-13T12:39:41.831148",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py",
+    "codePath": "models/mlp_train.py",
+    "git": {
+        "remote": "git@github.com:aklywtx/NN_pretrain.git",
+        "commit": "f82579b1c6a77dde14a500ddae843288b480b67c"
+    },
+    "email": "aklywtx233@163.com",
+    "root": "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain",
+    "host": "MACBOOK-PRO-341.local",
+    "username": "aklywtx",
+    "executable": "/Users/aklywtx/opt/anaconda3/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "disk": {
+        "total": 926.3517189025879,
+        "used": 894.9430923461914
+    },
+    "memory": {
+        "total": 32.0
+    }
+}

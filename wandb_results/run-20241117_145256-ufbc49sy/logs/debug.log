@@ -1,0 +1,36 @@
+2024-11-17 14:52:56,213 INFO    MainThread:22656 [wandb_setup.py:_flush():76] Current SDK version is 0.15.3
+2024-11-17 14:52:56,213 INFO    MainThread:22656 [wandb_setup.py:_flush():76] Configure stats pid to 22656
+2024-11-17 14:52:56,214 INFO    MainThread:22656 [wandb_setup.py:_flush():76] Loading settings from /Users/aklywtx/.config/wandb/settings
+2024-11-17 14:52:56,214 INFO    MainThread:22656 [wandb_setup.py:_flush():76] Loading settings from /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/settings
+2024-11-17 14:52:56,214 INFO    MainThread:22656 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2024-11-17 14:52:56,214 INFO    MainThread:22656 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2024-11-17 14:52:56,214 INFO    MainThread:22656 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'models/vit_train.py', 'program': '/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/vit_train.py'}
+2024-11-17 14:52:56,214 INFO    MainThread:22656 [wandb_init.py:_log_setup():507] Logging user logs to /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145256-ufbc49sy/logs/debug.log
+2024-11-17 14:52:56,214 INFO    MainThread:22656 [wandb_init.py:_log_setup():508] Logging internal logs to /Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/wandb/run-20241117_145256-ufbc49sy/logs/debug-internal.log
+2024-11-17 14:52:56,214 INFO    MainThread:22656 [wandb_init.py:init():547] calling init triggers
+2024-11-17 14:52:56,214 INFO    MainThread:22656 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.0001, 'epochs': 50, 'batch_size': 64, 'input_size': 65536}
+2024-11-17 14:52:56,214 INFO    MainThread:22656 [wandb_init.py:init():596] starting backend
+2024-11-17 14:52:56,214 INFO    MainThread:22656 [wandb_init.py:init():600] setting up manager
+2024-11-17 14:52:56,222 INFO    MainThread:22656 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2024-11-17 14:52:56,224 INFO    MainThread:22656 [wandb_init.py:init():606] backend started and connected
+2024-11-17 14:52:56,227 INFO    MainThread:22656 [wandb_init.py:init():700] updated telemetry
+2024-11-17 14:52:56,250 INFO    MainThread:22656 [wandb_init.py:init():737] communicating run to backend with 60.0 second timeout
+2024-11-17 14:52:56,395 WARNING MainThread:22656 [wandb_init.py:init():1172] interrupted
+Traceback (most recent call last):
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 1150, in init
+    run = wi.init()
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/wandb/sdk/wandb_init.py", line 740, in init
+    result = run_init_handle.wait(
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/mailbox.py", line 283, in wait
+    found, abandoned = self._slot._get_and_clear(timeout=wait_timeout)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/mailbox.py", line 130, in _get_and_clear
+    if self._wait(timeout=timeout):
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/wandb/sdk/lib/mailbox.py", line 126, in _wait
+    return self._event.wait(timeout=timeout)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/threading.py", line 581, in wait
+    signaled = self._cond.wait(timeout)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/threading.py", line 316, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+2024-11-17 14:52:59,299 WARNING MsgRouterThr:22656 [router.py:message_loop():77] message_loop has been closed

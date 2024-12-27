@@ -1,0 +1,37 @@
+Epochs:   0%|                                                                                                                            | 0/50 [00:00<?, ?it/s]
+Traceback (most recent call last):                                                                                                                              
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/vit_train.py", line 146, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/vit_train.py", line 139, in main
+    trainer.train(train_loader, val_loader, num_epochs)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 159, in train
+    outputs = self.model(images)
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/vit.py", line 141, in forward
+    x = self.to_patch_embedding(img)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.11/site-packages/einops/layers/torch.py", line 14, in forward
+    recipe = self._multirecipe[input.ndim]
+             ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 2

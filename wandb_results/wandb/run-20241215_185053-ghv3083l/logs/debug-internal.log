@@ -1,0 +1,17 @@
+{"time":"2024-12-15T18:50:53.960277+01:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-15T18:50:53.960321+01:00","level":"INFO","msg":"created symlink","path":"wandb_results/wandb/run-20241215_185053-ghv3083l/logs/debug-core.log"}
+{"time":"2024-12-15T18:50:54.073807+01:00","level":"INFO","msg":"created new stream","id":"ghv3083l"}
+{"time":"2024-12-15T18:50:54.073861+01:00","level":"INFO","msg":"stream: started","id":"ghv3083l"}
+{"time":"2024-12-15T18:50:54.073999+01:00","level":"INFO","msg":"handler: started","stream_id":"ghv3083l"}
+{"time":"2024-12-15T18:50:54.074121+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"ghv3083l"}
+{"time":"2024-12-15T18:50:54.074158+01:00","level":"INFO","msg":"sender: started","stream_id":"ghv3083l"}
+{"time":"2024-12-15T18:50:54.364149+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-15T19:07:57.326188+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-15T19:07:57.326847+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-15T19:07:58.061188+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-15T19:07:58.326386+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 99-99, summary, console lines 0-8","runtime_seconds":0.26499175}],"total_operations":1}}
+{"time":"2024-12-15T19:07:59.358125+01:00","level":"INFO","msg":"stream: closing","id":"ghv3083l"}
+{"time":"2024-12-15T19:07:59.358174+01:00","level":"INFO","msg":"handler: closed","stream_id":"ghv3083l"}
+{"time":"2024-12-15T19:07:59.358194+01:00","level":"INFO","msg":"sender: closed","stream_id":"ghv3083l"}
+{"time":"2024-12-15T19:07:59.358189+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ghv3083l"}
+{"time":"2024-12-15T19:07:59.358311+01:00","level":"INFO","msg":"stream: closed","id":"ghv3083l"}

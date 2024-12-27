@@ -1,0 +1,31 @@
+import os
+import json
+
+# Specify the directory containing the images
+image_directory = '/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/val_data/displays_dpi32_ViTval_only100dots'  # Update this path
+output_jsonl_file = '/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/val_data/displays_dpi32_ViTval_only100dots/metadata.jsonl'
+
+# Open the output JSONL file for writing
+with open(output_jsonl_file, 'w') as jsonl_file:
+    # Iterate through each file in the directory
+    for filename in os.listdir(image_directory):
+        if filename.endswith('.png'):
+            # Split the filename to extract the number of black dots and total dots
+            parts = filename.split('_')
+            if len(parts) >= 3:
+                black_dots = int(parts[1])  # Number of black dots
+                total_dots = int(parts[2])   # Number of all dots
+                
+                # Calculate p_true_black
+                p_true_black = black_dots / total_dots if total_dots > 0 else 0
+                
+                # Create a dictionary for the current image
+                image_info = {
+                    "file_name": filename,
+                    "p_true_black": p_true_black
+                }
+                
+                # Write the dictionary as a JSON object to the JSONL file
+                jsonl_file.write(f"{image_info}\n")
+
+print(f"JSONL file '{output_jsonl_file}' has been created with image data.")

@@ -1,0 +1,17 @@
+{"time":"2024-12-15T19:19:38.699974+01:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-15T19:19:38.700026+01:00","level":"INFO","msg":"created symlink","path":"wandb_results/wandb/run-20241215_191938-5irkfbth/logs/debug-core.log"}
+{"time":"2024-12-15T19:19:38.819634+01:00","level":"INFO","msg":"created new stream","id":"5irkfbth"}
+{"time":"2024-12-15T19:19:38.81968+01:00","level":"INFO","msg":"stream: started","id":"5irkfbth"}
+{"time":"2024-12-15T19:19:38.819898+01:00","level":"INFO","msg":"handler: started","stream_id":"5irkfbth"}
+{"time":"2024-12-15T19:19:38.819982+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"5irkfbth"}
+{"time":"2024-12-15T19:19:38.819984+01:00","level":"INFO","msg":"sender: started","stream_id":"5irkfbth"}
+{"time":"2024-12-15T19:19:39.108038+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-15T19:39:02.592156+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-15T19:39:02.592889+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-15T19:39:03.5944+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading config.yaml","runtime_seconds":0.203316833,"progress":"622B/622B"},{"desc":"uploading output.log","runtime_seconds":0.20330375,"progress":"998B/998B"}],"total_operations":2}}
+{"time":"2024-12-15T19:39:03.633025+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-15T19:39:04.867426+01:00","level":"INFO","msg":"stream: closing","id":"5irkfbth"}
+{"time":"2024-12-15T19:39:04.867474+01:00","level":"INFO","msg":"handler: closed","stream_id":"5irkfbth"}
+{"time":"2024-12-15T19:39:04.867497+01:00","level":"INFO","msg":"sender: closed","stream_id":"5irkfbth"}
+{"time":"2024-12-15T19:39:04.867493+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"5irkfbth"}
+{"time":"2024-12-15T19:39:04.867586+01:00","level":"INFO","msg":"stream: closed","id":"5irkfbth"}

@@ -1,0 +1,34 @@
+{
+    "os": "macOS-14.5-arm64-arm-64bit",
+    "python": "3.9.13",
+    "heartbeatAt": "2024-11-17T12:37:00.838995",
+    "startedAt": "2024-11-17T12:37:00.089023",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/MLP/MLP_1layer_mps_only100dots_sigmoid.py",
+    "codePath": "MLP/MLP_1layer_mps_only100dots_sigmoid.py",
+    "git": {
+        "remote": "git@github.com:aklywtx/NN_pretrain.git",
+        "commit": "79fb9213d8f97bc1c37c0dd0a2a01a0ea0927308"
+    },
+    "email": "aklywtx233@163.com",
+    "root": "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain",
+    "host": "MACBOOK-PRO-341.local",
+    "username": "aklywtx",
+    "executable": "/Users/aklywtx/opt/anaconda3/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "disk": {
+        "total": 926.3517189025879,
+        "used": 811.6881904602051
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 32.0
+    }
+}

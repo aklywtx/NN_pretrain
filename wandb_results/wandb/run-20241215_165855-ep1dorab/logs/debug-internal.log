@@ -1,0 +1,16 @@
+{"time":"2024-12-15T16:58:55.126108+01:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-15T16:58:55.126148+01:00","level":"INFO","msg":"created symlink","path":"wandb_results/wandb/run-20241215_165855-ep1dorab/logs/debug-core.log"}
+{"time":"2024-12-15T16:58:55.239461+01:00","level":"INFO","msg":"created new stream","id":"ep1dorab"}
+{"time":"2024-12-15T16:58:55.239506+01:00","level":"INFO","msg":"stream: started","id":"ep1dorab"}
+{"time":"2024-12-15T16:58:55.239531+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"ep1dorab"}
+{"time":"2024-12-15T16:58:55.239607+01:00","level":"INFO","msg":"sender: started","stream_id":"ep1dorab"}
+{"time":"2024-12-15T16:58:55.239636+01:00","level":"INFO","msg":"handler: started","stream_id":"ep1dorab"}
+{"time":"2024-12-15T16:58:55.589803+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-15T17:03:15.107857+01:00","level":"INFO","msg":"stream: closing","id":"ep1dorab"}
+{"time":"2024-12-15T17:03:15.108062+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-15T17:03:15.108649+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-15T17:03:15.704168+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-15T17:03:15.98231+01:00","level":"INFO","msg":"handler: closed","stream_id":"ep1dorab"}
+{"time":"2024-12-15T17:03:15.982332+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ep1dorab"}
+{"time":"2024-12-15T17:03:15.982351+01:00","level":"INFO","msg":"sender: closed","stream_id":"ep1dorab"}
+{"time":"2024-12-15T17:03:15.98445+01:00","level":"INFO","msg":"stream: closed","id":"ep1dorab"}

@@ -1,0 +1,32 @@
+Epochs:   0%|                                                                                                           | 0/6 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+Epoch 6/6:  51%|███████████████████████████████████████████████▌                                              | 40/79 [00:01<00:01, 33.96it/s]
+Testing: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:00<00:00, 30.92it/s]
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/MLP/MLP_1layer_mps_only100dots.py", line 230, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/MLP/MLP_1layer_mps_only100dots.py", line 225, in main
+    trainer.test(test_dir, batch_size)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/MLP/MLP_1layer_mps_only100dots.py", line 158, in test
+    self._analyze_results(total_loss / len(test_loader), predictions, actual_values)
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/MLP/MLP_1layer_mps_only100dots.py", line 169, in _analyze_results
+    results_df.to_csv(f'./results/test_results_{__file__}_{file_id}.csv', index=False)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/pandas/util/_decorators.py", line 333, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/pandas/core/generic.py", line 3967, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/format.py", line 1014, in to_csv
+    csv_formatter.save()
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/pandas/io/formats/csvs.py", line 251, in save
+    with get_handle(
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/pandas/io/common.py", line 749, in get_handle
+    check_parent_directory(str(handle))
+  File "/Users/aklywtx/opt/anaconda3/lib/python3.9/site-packages/pandas/io/common.py", line 616, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'results/test_results_/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/MLP'

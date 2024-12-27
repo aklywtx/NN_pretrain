@@ -1,0 +1,16 @@
+{"time":"2024-12-15T16:58:32.560999+01:00","level":"INFO","msg":"using version","core version":"0.19.1"}
+{"time":"2024-12-15T16:58:32.561052+01:00","level":"INFO","msg":"created symlink","path":"wandb_results/wandb/run-20241215_165832-kzgik8si/logs/debug-core.log"}
+{"time":"2024-12-15T16:58:32.677937+01:00","level":"INFO","msg":"created new stream","id":"kzgik8si"}
+{"time":"2024-12-15T16:58:32.677992+01:00","level":"INFO","msg":"stream: started","id":"kzgik8si"}
+{"time":"2024-12-15T16:58:32.678296+01:00","level":"INFO","msg":"handler: started","stream_id":"kzgik8si"}
+{"time":"2024-12-15T16:58:32.678444+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"kzgik8si"}
+{"time":"2024-12-15T16:58:32.678604+01:00","level":"INFO","msg":"sender: started","stream_id":"kzgik8si"}
+{"time":"2024-12-15T16:58:32.927219+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-12-15T16:58:40.268364+01:00","level":"INFO","msg":"stream: closing","id":"kzgik8si"}
+{"time":"2024-12-15T16:58:40.268568+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-12-15T16:58:40.269255+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-12-15T16:58:40.91666+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-12-15T16:58:41.170364+01:00","level":"INFO","msg":"handler: closed","stream_id":"kzgik8si"}
+{"time":"2024-12-15T16:58:41.170382+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"kzgik8si"}
+{"time":"2024-12-15T16:58:41.170419+01:00","level":"INFO","msg":"sender: closed","stream_id":"kzgik8si"}
+{"time":"2024-12-15T16:58:41.170561+01:00","level":"INFO","msg":"stream: closed","id":"kzgik8si"}

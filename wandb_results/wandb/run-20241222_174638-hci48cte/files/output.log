@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 82, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 75, in main
+    trainer = Trainer(model, criterion, optimizer, checkpoint_manager, device, model_type=model_type, dropout=dropout, patience=10)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/utils.py", line 108, in __init__
+    assert model_type in ["mlp", "vit"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

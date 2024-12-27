@@ -1,0 +1,16 @@
+{
+  "os": "macOS-14.5-arm64-i386-64bit",
+  "python": "CPython 3.11.6",
+  "startedAt": "2024-12-15T13:00:21.831594Z",
+  "program": "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py",
+  "codePath": "models/mlp_train.py",
+  "git": {
+    "remote": "git@github.com:aklywtx/NN_pretrain.git",
+    "commit": "f82579b1c6a77dde14a500ddae843288b480b67c"
+  },
+  "email": "aklywtx233@163.com",
+  "root": "./wandb_results",
+  "host": "MACBOOK-PRO-341.local",
+  "executable": "/Users/aklywtx/opt/anaconda3/bin/python",
+  "codePathLocal": "models/mlp_train.py"
+}

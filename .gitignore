@@ -7,3 +7,7 @@ __pycache__/
 .history-aklywtx
 *.history-aklywtx
 **/.history-*
+test_data/
+training_data/
+val_data/
+black_white_dots/

@@ -18,76 +18,31 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {device}")
 
 
-### Checkpoint Management ###
-class CheckpointManager:
-    def __init__(self, directory="checkpoints"):
-        self.ckpt_dir = Path(directory)
-        self.ckpt_dir.mkdir(exist_ok=True)
+# ### Checkpoint Management ###
+# class CheckpointManager:
+#     def __init__(self, directory="checkpoints"):
+#         self.ckpt_dir = Path(directory)
+#         self.ckpt_dir.mkdir(exist_ok=True)
     
-    def save_checkpoint(self, model, epoch, loss):
-        ckpt_path = self.ckpt_dir / f"model_epoch_{epoch}.pt"
-        torch.save({
-            'epoch': epoch,
-            'model_state_dict': model.state_dict(),
-            'loss': loss,
-        }, ckpt_path)
+#     def save_checkpoint(self, model, epoch, loss):
+#         ckpt_path = self.ckpt_dir / f"model_epoch_{epoch}.pt"
+#         torch.save({
+#             'epoch': epoch,
+#             'model_state_dict': model.state_dict(),
+#             'loss': loss,
+#         }, ckpt_path)
         
-        # Keep only the latest checkpoint and the best checkpoint
-        checkpoints = sorted(self.ckpt_dir.glob("model_epoch_*.pt"))
-        if len(checkpoints) > 2:
-            checkpoints[0].unlink()
+#         # Keep only the latest checkpoint and the best checkpoint
+#         checkpoints = sorted(self.ckpt_dir.glob("model_epoch_*.pt"))
+#         if len(checkpoints) > 2:
+#             checkpoints[0].unlink()
     
-    def load_checkpoint(self, model, checkpoint_path):
-        checkpoint = torch.load(checkpoint_path)
-        model.load_state_dict(checkpoint['model_state_dict'])
-        return checkpoint['epoch'], checkpoint['loss']
+#     def load_checkpoint(self, model, checkpoint_path):
+#         checkpoint = torch.load(checkpoint_path)
+#         model.load_state_dict(checkpoint['model_state_dict'])
+#         return checkpoint['epoch'], checkpoint['loss']
 
 
-class DotDataset(Dataset):
-    def __init__(self, image_dir='/local/xtong/NN_pretrain/training_data/displays_dpi32', image_size=None, transform=None):
-        self.image_dir = image_dir
-        self.image_size = image_size
-        self.transform = transform
-        self.data = []
-        self.labels = []
-        
-        # Get list of image files from the directory
-        image_files = [f for f in os.listdir(image_dir) if f.startswith('image_')]
-        
-        for img_file in image_files:
-            # Parse filename to get dots information
-            # image_numBlackDots_numTotalDots_index.png
-            parts = img_file.split('_')
-            num_black = int(parts[1])
-            num_total = int(parts[2])
-            
-            # Calculate probability
-            prob = num_black / num_total
-            
-            # Load and process image
-            img_path = os.path.join(image_dir, img_file)
-            image = Image.open(img_path).convert('L')  # Convert to grayscale
-            image = np.array(image) / 255.0  # Normalize to [0,1]
-            image = image.astype(np.float32).flatten()
-            
-            self.data.append(image)
-            self.labels.append(prob)
-            
-        self.num_samples = len(self.data)
-
-    def __len__(self):
-        return self.num_samples
-
-    def __getitem__(self, idx):
-        sample = self.data[idx]
-        label = self.labels[idx]
-
-        if self.transform:
-            sample = self.transform(sample)
-
-        return torch.tensor(sample, device=device), torch.tensor([label], dtype=torch.float32, device=device)
-
-### Model Definition ###
 
 class OneLayerMLP(nn.Module):
     def __init__(self, input_size):

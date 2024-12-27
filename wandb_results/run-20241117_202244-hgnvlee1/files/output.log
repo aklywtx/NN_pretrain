@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 66, in <module>
+    main()
+  File "/Users/aklywtx/Desktop/VLM_Bias_research/NN_pretrain/models/mlp_train.py", line 60, in main
+    trainer.train(train_loader, num_epochs)
+TypeError: train() missing 1 required positional argument: 'num_epochs'
